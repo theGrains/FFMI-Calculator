@@ -11,14 +11,23 @@ class MeasureViewController: UIViewController {
     
     var orientationMale: Bool = true
     var unitsImperial: Bool = true
+    var knowFat: Bool = true
     var calculatorModel = CalculatorModel()
     
     @IBOutlet weak var heightFtField: UITextField!
     @IBOutlet weak var heightInchField: UITextField!
     @IBOutlet weak var weightField: UITextField!
     @IBOutlet weak var fatField: UITextField!
+    @IBOutlet weak var neckField: UITextField!
+    @IBOutlet weak var hipField: UITextField!
+    @IBOutlet weak var waistField: UITextField!
+    
+    
     @IBOutlet weak var ffmiLabel: UILabel!
     @IBOutlet weak var affmiLabel: UILabel!
+    
+    @IBOutlet weak var maleButton: UIButton!
+    @IBOutlet weak var femaleButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +39,10 @@ class MeasureViewController: UIViewController {
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
+        
+        maleButton.isHidden = true
+        femaleButton.isHidden = true
+        
     }
     
     
@@ -45,6 +58,26 @@ class MeasureViewController: UIViewController {
         performSegue(withIdentifier: K.Segue.measureSettings, sender: self)
     }
     
+    @IBAction func knownFatPressed(_ sender: UIButton) {
+        
+        maleButton.isHidden = true
+        femaleButton.isHidden = true
+        neckField.isHidden = true
+        hipField.isHidden = true
+        waistField.isHidden = true
+        
+    }
+    
+    @IBAction func unknownFatPressed(_ sender: UIButton) {
+        
+        maleButton.isHidden = false
+        femaleButton.isHidden = false
+        neckField.isHidden = false
+        hipField.isHidden = false
+        waistField.isHidden = false
+    }
+    
+    
     @IBAction func maleButtonPressed(_ sender: UIButton) {
         orientationMale = true
     }
@@ -59,6 +92,9 @@ class MeasureViewController: UIViewController {
         heightFtField.placeholder = "height (ft)"
         heightInchField.placeholder = "height (inch)"
         weightField.placeholder = "weight (lbs)"
+        neckField.placeholder = "circumference (inch)"
+        hipField.placeholder = "circumference (inch)"
+        waistField.placeholder = "circumference (inch)"
         resetButtonPressed(sender)
     }
     
@@ -68,6 +104,9 @@ class MeasureViewController: UIViewController {
         heightFtField.placeholder = "height (cm)"
         heightInchField.placeholder = "N/A"
         weightField.placeholder = "mass (kg)"
+        neckField.placeholder = "circumference (cm)"
+        hipField.placeholder = "circumference (cm)"
+        waistField.placeholder = "circumference (cm)"
         resetButtonPressed(sender)
     }
     
