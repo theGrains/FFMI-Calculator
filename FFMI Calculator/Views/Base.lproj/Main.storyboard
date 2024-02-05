@@ -72,8 +72,8 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fat-Free Mass Index Calculator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zv1-jl-nnf">
-                                <rect key="frame" x="97" y="49.666666666666664" width="236" height="20.333333333333336"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fat-Free Mass Index Calculator (known fat%, imperial)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zv1-jl-nnf">
+                                <rect key="frame" x="9.6666666666666572" y="49.666666666666664" width="411" height="20.333333333333336"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -100,15 +100,46 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FFMI = " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bzw-24-1YX">
-                                <rect key="frame" x="187" y="149.33333333333334" width="56.333333333333343" height="20.333333333333343"/>
+                                <rect key="frame" x="187" y="135.33333333333334" width="56.333333333333343" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="height (ft)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tII-Hk-Mc4">
+                                <rect key="frame" x="77" y="299" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="fat %" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OdZ-ls-56a">
+                                <rect key="frame" x="251" y="384" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adjusted FFMI = " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHl-yv-Omi">
+                                <rect key="frame" x="151.33333333333334" y="162.66666666666666" width="127.66666666666666" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="weight (lbs)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rkJ-Fx-UXL">
+                                <rect key="frame" x="77" y="384" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="height (inch)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0OO-2u-PmZ">
+                                <rect key="frame" x="251" y="299" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="cHl-yv-Omi" firstAttribute="top" secondItem="Bzw-24-1YX" secondAttribute="bottom" constant="7" id="7Kz-xL-EK2"/>
                             <constraint firstItem="cNB-kc-4Ib" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9f2-WA-owW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cNB-kc-4Ib" secondAttribute="trailing" id="BhR-M3-KgC"/>
                             <constraint firstItem="cNB-kc-4Ib" firstAttribute="top" secondItem="Zv1-jl-nnf" secondAttribute="bottom" constant="15" id="DYH-oH-MFo"/>
@@ -118,23 +149,30 @@
                             <constraint firstItem="OPO-Cy-nMB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Sjz-dY-y4x"/>
                             <constraint firstItem="Zv1-jl-nnf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WYx-1O-fX5"/>
                             <constraint firstItem="cNB-kc-4Ib" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dRG-Gd-XCG"/>
+                            <constraint firstItem="cHl-yv-Omi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dkM-ja-yU5"/>
                             <constraint firstItem="OPO-Cy-nMB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hVW-rB-xeD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Yvr-nq-y9E" secondAttribute="bottom" id="jFM-07-jyw"/>
                             <constraint firstItem="Yvr-nq-y9E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="p5r-1L-ls6"/>
                             <constraint firstItem="Yvr-nq-y9E" firstAttribute="top" secondItem="OPO-Cy-nMB" secondAttribute="bottom" id="rb0-ao-QPf"/>
                             <constraint firstItem="Bzw-24-1YX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uA1-cN-LD1"/>
-                            <constraint firstItem="Bzw-24-1YX" firstAttribute="top" secondItem="cNB-kc-4Ib" secondAttribute="bottom" constant="30" id="y7c-bh-BA9"/>
+                            <constraint firstItem="Bzw-24-1YX" firstAttribute="top" secondItem="cNB-kc-4Ib" secondAttribute="bottom" constant="16" id="y7c-bh-BA9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="w8m-SR-dGh"/>
                     <connections>
+                        <outlet property="affmiLabel" destination="cHl-yv-Omi" id="gcL-9P-EYi"/>
+                        <outlet property="fatField" destination="OdZ-ls-56a" id="3Oc-iP-OU9"/>
+                        <outlet property="ffmiLabel" destination="Bzw-24-1YX" id="mTh-53-HVe"/>
+                        <outlet property="heightFtField" destination="tII-Hk-Mc4" id="Zb1-6d-7hR"/>
+                        <outlet property="heightInchField" destination="0OO-2u-PmZ" id="cJG-EM-FnJ"/>
+                        <outlet property="weightField" destination="rkJ-Fx-UXL" id="p6s-im-7RT"/>
                         <segue destination="IZ5-bO-D16" kind="presentation" identifier="measureToTrends" modalPresentationStyle="fullScreen" id="dfK-9G-Z5b"/>
                         <segue destination="NZy-Od-6hX" kind="presentation" identifier="measureToMethodology" modalPresentationStyle="fullScreen" id="mYz-lM-f8H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="72.51908396946564" y="-34.507042253521128"/>
+            <point key="canvasLocation" x="71.162790697674424" y="-34.763948497854081"/>
         </scene>
         <!--Trends View Controller-->
         <scene sceneID="x7b-5n-KKe">
