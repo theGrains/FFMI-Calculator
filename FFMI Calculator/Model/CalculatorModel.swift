@@ -27,18 +27,25 @@ struct CalculatorModel {
         return [FFMI, AFFMI]
     }
     
-    func convertMetricToImperialFat() {
+    func convertMetricToImperialFat(_ orientationMale: Bool, _ waist: Float, _ neck: Float, _ hip: Float = 0.0) -> [Float] {
         
+        var hipInch = hip
+        let waistInch = waist * 0.393701
+        let neckInch = neck * 0.393701
+        if orientationMale == false {
+            hipInch = hip * 0.393701
+        }
+        return [waistInch, neckInch, hipInch]
     }
     
-    func calculateBodyFat(_ orientationMale: Bool, _ waist: Float, _ hip: Float, _ neck: Float, _ heightFt: Float, _ heightInch: Float) -> Float {
+    func calculateBodyFat(_ orientationMale: Bool, _ waist: Float, _ neck: Float, _ hip: Float, _ heightFt: Float, _ heightInch: Float) -> Float {
         
         var fat: Float = 0.0
         
         if orientationMale == true {
-            fat = 495 / (1.0324 - 0.19077 * log10(waist - neck) + 0.15456 * log10(heightFt * 12 + heightInch)) - 450
+            fat = 86.01 * log10(waist - neck) - 70.041 * log10(heightFt * 12 + heightInch) + 36.76
         } else {
-            fat = 495 / (1.29579 - 0.35004 * log10(waist + hip - neck) + 0.22100 * log10(heightFt * 12 + heightInch)) - 450
+            fat = 163.205 * log10(waist + hip - neck) - 97.648 * log10(heightFt * 12 + heightInch) - 78.387
         }
         return fat
     }

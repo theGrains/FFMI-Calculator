@@ -111,7 +111,10 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLz-Gb-2G4">
                                         <rect key="frame" x="0.0" y="0.0" width="215" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="I know my fat %"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="I know my fat %">
+                                            <backgroundConfiguration key="background" strokeWidth="1"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="knownFatPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iIG-w7-HWb"/>
                                         </connections>
@@ -119,7 +122,10 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AjN-HO-qOO">
                                         <rect key="frame" x="215" y="0.0" width="215" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="I don't know my fat %"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="I don't know my fat %">
+                                            <backgroundConfiguration key="background" strokeWidth="1"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="unknownFatPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bJd-rH-o35"/>
                                         </connections>
@@ -133,7 +139,8 @@
                                         <rect key="frame" x="0.0" y="0.0" width="215" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Imperial">
-                                            <backgroundConfiguration key="background"/>
+                                            <backgroundConfiguration key="background" strokeWidth="1"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="imperialButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cR8-Kl-PTV"/>
@@ -142,7 +149,10 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZ2-sg-Be0">
                                         <rect key="frame" x="215" y="0.0" width="215" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Metric"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Metric">
+                                            <backgroundConfiguration key="background" strokeWidth="1"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="metricButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OCV-9f-JQY"/>
                                         </connections>
@@ -156,7 +166,8 @@
                                         <rect key="frame" x="0.0" y="0.0" width="215" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Male">
-                                            <backgroundConfiguration key="background"/>
+                                            <backgroundConfiguration key="background" strokeWidth="1"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="maleButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K4J-H0-3FF"/>
@@ -166,7 +177,8 @@
                                         <rect key="frame" x="215" y="0.0" width="215" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Female">
-                                            <backgroundConfiguration key="background"/>
+                                            <backgroundConfiguration key="background" strokeWidth="1"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="femaleButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MUc-rC-Ct9"/>
@@ -243,13 +255,18 @@
                     <navigationItem key="navigationItem" id="w8m-SR-dGh"/>
                     <connections>
                         <outlet property="affmiLabel" destination="cHl-yv-Omi" id="gcL-9P-EYi"/>
+                        <outlet property="dontKnowFatButton" destination="AjN-HO-qOO" id="toV-oQ-cu4"/>
                         <outlet property="fatField" destination="OdZ-ls-56a" id="3Oc-iP-OU9"/>
+                        <outlet property="fatLabel" destination="3bM-D0-Js1" id="2JC-ox-IBY"/>
                         <outlet property="femaleButton" destination="QMN-k7-X8j" id="TLv-cz-aAN"/>
                         <outlet property="ffmiLabel" destination="Bzw-24-1YX" id="mTh-53-HVe"/>
                         <outlet property="heightFtField" destination="tII-Hk-Mc4" id="Zb1-6d-7hR"/>
                         <outlet property="heightInchField" destination="0OO-2u-PmZ" id="cJG-EM-FnJ"/>
                         <outlet property="hipField" destination="No1-Vo-C67" id="7fR-A8-OLD"/>
+                        <outlet property="imperialButton" destination="ym5-k0-6Qz" id="Jt8-nV-rJU"/>
+                        <outlet property="knowFatButton" destination="TLz-Gb-2G4" id="ae4-u3-kno"/>
                         <outlet property="maleButton" destination="H5c-wN-eVq" id="VSp-Pt-dj2"/>
+                        <outlet property="metricButton" destination="HZ2-sg-Be0" id="RtU-6m-1lH"/>
                         <outlet property="neckField" destination="S99-GB-Edo" id="TcY-5e-XBw"/>
                         <outlet property="waistField" destination="RJn-43-w34" id="s94-Qy-sSD"/>
                         <outlet property="weightField" destination="rkJ-Fx-UXL" id="p6s-im-7RT"/>
