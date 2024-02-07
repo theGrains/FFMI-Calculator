@@ -33,6 +33,15 @@ class MeasureViewController: UIViewController {
     @IBOutlet weak var imperialButton: UIButton!
     @IBOutlet weak var metricButton: UIButton!
     
+    @IBOutlet weak var resetButton: UIButton!
+    @IBOutlet weak var calculateButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
+    
+    @IBOutlet weak var measureButton: UIButton!
+    @IBOutlet weak var trendsButton: UIButton!
+    @IBOutlet weak var methodologyButton: UIButton!
+    @IBOutlet weak var settingsButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,18 +62,34 @@ class MeasureViewController: UIViewController {
         metricButton.backgroundColor = UIColor.seaGreen
         maleButton.backgroundColor = UIColor.darkGreen
         femaleButton.backgroundColor = UIColor.seaGreen
+        
         maleButton.layer.borderColor = UIColor.darkGreen.cgColor
         femaleButton.layer.borderColor = UIColor.darkGreen.cgColor
         knowFatButton.layer.borderColor = UIColor.darkGreen.cgColor
         dontKnowFatButton.layer.borderColor = UIColor.darkGreen.cgColor
         imperialButton.layer.borderColor = UIColor.darkGreen.cgColor
         metricButton.layer.borderColor = UIColor.darkGreen.cgColor
+        calculateButton.layer.borderColor = UIColor.darkGreen.cgColor
+        resetButton.layer.borderColor = UIColor.darkGreen.cgColor
+        saveButton.layer.borderColor = UIColor.darkGreen.cgColor
+        measureButton.layer.borderColor = UIColor.darkGreen.cgColor
+        trendsButton.layer.borderColor = UIColor.darkGreen.cgColor
+        methodologyButton.layer.borderColor = UIColor.darkGreen.cgColor
+        settingsButton.layer.borderColor = UIColor.darkGreen.cgColor
+        
         maleButton.layer.borderWidth = 1.0
         femaleButton.layer.borderWidth = 1.0
         knowFatButton.layer.borderWidth = 1.0
         dontKnowFatButton.layer.borderWidth = 1.0
         imperialButton.layer.borderWidth = 1.0
         metricButton.layer.borderWidth = 1.0
+        calculateButton.layer.borderWidth = 1.0
+        resetButton.layer.borderWidth = 1.0
+        saveButton.layer.borderWidth = 1.0
+        measureButton.layer.borderWidth = 1.0
+        trendsButton.layer.borderWidth = 1.0
+        methodologyButton.layer.borderWidth = 1.0
+        settingsButton.layer.borderWidth = 1.0
     }
     
     
@@ -125,6 +150,7 @@ class MeasureViewController: UIViewController {
     @IBAction func imperialButtonPressed(_ sender: UIButton) {
         
         unitsImperial = true
+        heightInchField.isHidden = false
         heightFtField.placeholder = "height (ft)"
         heightInchField.placeholder = "height (inch)"
         weightField.placeholder = "weight (lbs)"
@@ -139,8 +165,8 @@ class MeasureViewController: UIViewController {
     @IBAction func metricButtonPressed(_ sender: UIButton) {
         
         unitsImperial = false
+        heightInchField.isHidden = true
         heightFtField.placeholder = "height (cm)"
-        heightInchField.placeholder = "N/A"
         weightField.placeholder = "mass (kg)"
         neckField.placeholder = "neck (cm)"
         hipField.placeholder = "hip (cm)"
@@ -150,6 +176,12 @@ class MeasureViewController: UIViewController {
         resetButtonPressed(sender)
     }
     
+    func animateButton(_ sender: UIButton) {
+        sender.alpha = 0.5
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            sender.alpha = 1
+        }
+    }
     
     @IBAction func resetButtonPressed(_ sender: UIButton) {
         
@@ -163,6 +195,10 @@ class MeasureViewController: UIViewController {
         ffmiLabel.text = "FFMI ="
         affmiLabel.text = "Normalized FFMI ="
         fatLabel.text = "Fat % ="
+        
+        if sender.currentTitle == "Reset" {
+            animateButton(sender)
+        }
     }
     
     func updateViewController(_ FFMI: Float, _ AFFMI: Float, _ fat: Float) {
@@ -175,10 +211,18 @@ class MeasureViewController: UIViewController {
         let fatText = String(format: "%.2f", fat)
         fatLabel.text = "Fat % = \(fatText)"
     }
+    
+    func fillInData() {
+        ffmiLabel.text = "Fill in each data entry"
+        affmiLabel.text = "Fill in each data entry"
+        fatLabel.text = "Fill in each data entry"
+    }
+    
   
     @IBAction func calculateButtonPressed(_ sender: UIButton) {
         
         //MARK: - Known Fat, Metric Units
+        animateButton(sender)
 
         if knowFat == true {
             if unitsImperial == false {
@@ -191,8 +235,7 @@ class MeasureViewController: UIViewController {
                     
                     updateViewController(FFMI, AFFMI, fat)
                 } else {
-                    ffmiLabel.text = "Fill in each data entry"
-                    affmiLabel.text = "Fill in each data entry"
+                    fillInData()
                 }
                 
             //MARK: - Known Fat, Imperial Units
@@ -206,8 +249,7 @@ class MeasureViewController: UIViewController {
                     
                     updateViewController(FFMI, AFFMI, fat)
                 } else {
-                    ffmiLabel.text = "Fill in each data entry"
-                    affmiLabel.text = "Fill in each data entry"
+                    fillInData()
                 }
             }
             
@@ -226,9 +268,7 @@ class MeasureViewController: UIViewController {
                     
                     updateViewController(FFMI, AFFMI, fat)
                 } else {
-                    ffmiLabel.text = "Fill in each data entry"
-                    affmiLabel.text = "Fill in each data entry"
-                    fatLabel.text = "Fill in each data entry"
+                    fillInData()
                 }
                 
             //MARK: - Unknown Fat, Imperial Units
@@ -243,9 +283,7 @@ class MeasureViewController: UIViewController {
                     
                     updateViewController(FFMI, AFFMI, fat)
                 } else {
-                    ffmiLabel.text = "Fill in each data entry"
-                    affmiLabel.text = "Fill in each data entry"
-                    fatLabel.text = "Fill in each data entry"
+                    fillInData()
                 }
             }
         }
