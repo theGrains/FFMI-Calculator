@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct CalculatorModel {
     
@@ -48,5 +49,23 @@ struct CalculatorModel {
             fat = 163.205 * log10(waist + hip - neck) - 97.648 * log10(heightFt * 12 + heightInch) - 78.387
         }
         return fat
+    }
+    
+    func fillInData(_ ffmiLabel: UILabel, _ affmiLabel: UILabel, _ fatLabel: UILabel) {
+        ffmiLabel.text = "Fill in each data entry"
+        affmiLabel.text = "Fill in each data entry"
+        fatLabel.text = "Fill in each data entry"
+    }
+    
+    func updateViewController(_ FFMI: Float, _ AFFMI: Float, _ fat: Float, _ ffmiLabel: UILabel, _ affmiLabel: UILabel, _ fatLabel: UILabel) {
+        
+        let FFMItext = String(format: "%.2f", FFMI)
+        ffmiLabel.text = "FFMI = \(FFMItext)"
+        
+        let AFFMItext = String(format: "%.2f", AFFMI)
+        affmiLabel.text = "Normalized FFMI = \(AFFMItext)"
+        
+        let fatText = String(format: "%.2f", fat)
+        fatLabel.text = "Fat % = \(fatText)%"
     }
 }

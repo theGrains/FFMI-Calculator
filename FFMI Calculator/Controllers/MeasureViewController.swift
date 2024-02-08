@@ -42,14 +42,12 @@ class MeasureViewController: UIViewController {
     @IBOutlet weak var methodologyButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        heightFtField.delegate = self
-        heightInchField.delegate = self
-        weightField.delegate = self
-        fatField.delegate = self
+        let fieldArray: [UITextField] = [heightFtField, heightInchField, weightField, fatField, neckField, waistField, hipField]
+        
+        self.delegateDoneField(fieldArray)
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -63,33 +61,24 @@ class MeasureViewController: UIViewController {
         maleButton.backgroundColor = UIColor.darkGreen
         femaleButton.backgroundColor = UIColor.seaGreen
         
-        maleButton.layer.borderColor = UIColor.darkGreen.cgColor
-        femaleButton.layer.borderColor = UIColor.darkGreen.cgColor
-        knowFatButton.layer.borderColor = UIColor.darkGreen.cgColor
-        dontKnowFatButton.layer.borderColor = UIColor.darkGreen.cgColor
-        imperialButton.layer.borderColor = UIColor.darkGreen.cgColor
-        metricButton.layer.borderColor = UIColor.darkGreen.cgColor
-        calculateButton.layer.borderColor = UIColor.darkGreen.cgColor
-        resetButton.layer.borderColor = UIColor.darkGreen.cgColor
-        saveButton.layer.borderColor = UIColor.darkGreen.cgColor
-        measureButton.layer.borderColor = UIColor.darkGreen.cgColor
-        trendsButton.layer.borderColor = UIColor.darkGreen.cgColor
-        methodologyButton.layer.borderColor = UIColor.darkGreen.cgColor
-        settingsButton.layer.borderColor = UIColor.darkGreen.cgColor
+        let buttonArray: [UIButton] = [maleButton, femaleButton, knowFatButton, dontKnowFatButton, imperialButton, metricButton, calculateButton, resetButton, saveButton, measureButton, trendsButton, methodologyButton, settingsButton]
         
-        maleButton.layer.borderWidth = 1.0
-        femaleButton.layer.borderWidth = 1.0
-        knowFatButton.layer.borderWidth = 1.0
-        dontKnowFatButton.layer.borderWidth = 1.0
-        imperialButton.layer.borderWidth = 1.0
-        metricButton.layer.borderWidth = 1.0
-        calculateButton.layer.borderWidth = 1.0
-        resetButton.layer.borderWidth = 1.0
-        saveButton.layer.borderWidth = 1.0
-        measureButton.layer.borderWidth = 1.0
-        trendsButton.layer.borderWidth = 1.0
-        methodologyButton.layer.borderWidth = 1.0
-        settingsButton.layer.borderWidth = 1.0
+        self.borderButtons(buttonArray)
+        
+    }
+    
+    func borderButtons(_ buttonArray: [UIButton]) {
+        for button in buttonArray {
+            button.layer.borderWidth = 1.0
+            button.layer.borderColor = UIColor.darkGreen.cgColor
+        }
+    }
+    
+    func delegateDoneField(_ fieldArray: [UITextField]) {
+        for txt in fieldArray {
+            txt.delegate = self
+            txt.addDoneButtonOnKeyboard()
+        }
     }
     
     
@@ -201,23 +190,6 @@ class MeasureViewController: UIViewController {
         }
     }
     
-    func updateViewController(_ FFMI: Float, _ AFFMI: Float, _ fat: Float) {
-        let FFMItext = String(format: "%.2f", FFMI)
-        ffmiLabel.text = "FFMI = \(FFMItext)"
-        
-        let AFFMItext = String(format: "%.2f", AFFMI)
-        affmiLabel.text = "Normalized FFMI = \(AFFMItext)"
-        
-        let fatText = String(format: "%.2f", fat)
-        fatLabel.text = "Fat % = \(fatText)"
-    }
-    
-    func fillInData() {
-        ffmiLabel.text = "Fill in each data entry"
-        affmiLabel.text = "Fill in each data entry"
-        fatLabel.text = "Fill in each data entry"
-    }
-    
   
     @IBAction func calculateButtonPressed(_ sender: UIButton) {
         
@@ -233,9 +205,9 @@ class MeasureViewController: UIViewController {
                     let FFMI = FFMIS[0]
                     let AFFMI = FFMIS[1]
                     
-                    updateViewController(FFMI, AFFMI, fat)
+                    calculatorModel.updateViewController(FFMI, AFFMI, fat, ffmiLabel, affmiLabel, fatLabel)
                 } else {
-                    fillInData()
+                    calculatorModel.fillInData(ffmiLabel, affmiLabel, fatLabel)
                 }
                 
             //MARK: - Known Fat, Imperial Units
@@ -247,9 +219,9 @@ class MeasureViewController: UIViewController {
                     let FFMI = FFMIS[0]
                     let AFFMI = FFMIS[1]
                     
-                    updateViewController(FFMI, AFFMI, fat)
+                    calculatorModel.updateViewController(FFMI, AFFMI, fat, ffmiLabel, affmiLabel, fatLabel)
                 } else {
-                    fillInData()
+                    calculatorModel.fillInData(ffmiLabel, affmiLabel, fatLabel)
                 }
             }
             
@@ -266,9 +238,9 @@ class MeasureViewController: UIViewController {
                     let FFMI = FFMIS[0]
                     let AFFMI = FFMIS[1]
                     
-                    updateViewController(FFMI, AFFMI, fat)
+                    calculatorModel.updateViewController(FFMI, AFFMI, fat, ffmiLabel, affmiLabel, fatLabel)
                 } else {
-                    fillInData()
+                    calculatorModel.fillInData(ffmiLabel, affmiLabel, fatLabel)
                 }
                 
             //MARK: - Unknown Fat, Imperial Units
@@ -281,9 +253,9 @@ class MeasureViewController: UIViewController {
                     let FFMI = FFMIS[0]
                     let AFFMI = FFMIS[1]
                     
-                    updateViewController(FFMI, AFFMI, fat)
+                    calculatorModel.updateViewController(FFMI, AFFMI, fat, ffmiLabel, affmiLabel, fatLabel)
                 } else {
-                    fillInData()
+                    calculatorModel.fillInData(ffmiLabel, affmiLabel, fatLabel)
                 }
             }
         }
@@ -294,5 +266,37 @@ extension MeasureViewController: UITextFieldDelegate {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+}
+
+extension UITextField {
+    
+    @IBInspectable var doneAccessory: Bool{
+            get{
+                return self.doneAccessory
+            }
+            set (hasDone) {
+                if hasDone{
+                    addDoneButtonOnKeyboard()
+                }
+            }
+        }
+    
+    func addDoneButtonOnKeyboard() {
+           let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+           doneToolbar.barStyle = .default
+           
+           let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+           let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonAction))
+           
+           let items = [flexSpace, done]
+           doneToolbar.items = items
+           doneToolbar.sizeToFit()
+           
+           self.inputAccessoryView = doneToolbar
+       }
+       
+    @objc func doneButtonAction() {
+        self.resignFirstResponder()
     }
 }
