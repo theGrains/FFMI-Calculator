@@ -47,6 +47,12 @@ class MeasureViewController: UIViewController {
     @IBOutlet weak var methodologyButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
     
+    
+    @IBOutlet weak var orientationStack: UIStackView!
+    @IBOutlet weak var bodyStack: UIStackView!
+    
+    @IBOutlet weak var placeholderLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,8 +63,9 @@ class MeasureViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        maleButton.isHidden = true
-        femaleButton.isHidden = true
+        placeholderLabel.isHidden = false
+        orientationStack.isHidden = true
+        bodyStack.isHidden = true
         knowFatButton.backgroundColor = UIColor.darkGreen
         dontKnowFatButton.backgroundColor = UIColor.seaGreen
         imperialButton.backgroundColor = UIColor.darkGreen
@@ -98,7 +105,7 @@ class MeasureViewController: UIViewController {
     
     func borderButtons(_ buttonArray: [UIButton]) {
         for button in buttonArray {
-            button.layer.borderWidth = 1.0
+            button.layer.borderWidth = 2.0
             button.layer.borderColor = UIColor.darkGreen.cgColor
         }
     }
@@ -125,11 +132,9 @@ class MeasureViewController: UIViewController {
     @IBAction func knownFatPressed(_ sender: UIButton) {
         
         knowFat = true
-        maleButton.isHidden = true
-        femaleButton.isHidden = true
-        neckField.isHidden = true
-        hipField.isHidden = true
-        waistField.isHidden = true
+        placeholderLabel.isHidden = false
+        orientationStack.isHidden = true
+        bodyStack.isHidden = true
         fatField.isHidden = false
         knowFatButton.backgroundColor = UIColor(named: "darkGreen")
         dontKnowFatButton.backgroundColor = UIColor(named: "seaGreen")
@@ -139,11 +144,9 @@ class MeasureViewController: UIViewController {
     @IBAction func unknownFatPressed(_ sender: UIButton) {
         
         knowFat = false
-        maleButton.isHidden = false
-        femaleButton.isHidden = false
-        neckField.isHidden = false
-        hipField.isHidden = false
-        waistField.isHidden = false
+        placeholderLabel.isHidden = true
+        orientationStack.isHidden = false
+        bodyStack.isHidden = false
         fatField.isHidden = true
         knowFatButton.backgroundColor = UIColor(named: "seaGreen")
         dontKnowFatButton.backgroundColor = UIColor(named: "darkGreen")
