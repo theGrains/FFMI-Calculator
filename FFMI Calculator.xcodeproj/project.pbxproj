@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		235415DA2B75C6B9006330B0 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 235415D92B75C6B8006330B0 /* IQKeyboardManagerSwift */; };
 		235CEC5F2B6F22F300F8353E /* TrendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235CEC5E2B6F22F300F8353E /* TrendsViewController.swift */; };
 		235CEC612B6F233800F8353E /* MethodologyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235CEC602B6F233800F8353E /* MethodologyViewController.swift */; };
 		235CEC642B6F246C00F8353E /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235CEC632B6F246C00F8353E /* K.swift */; };
@@ -16,6 +17,9 @@
 		235DC8C02B6DC1DA00D5AF4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 235DC8BE2B6DC1DA00D5AF4F /* Main.storyboard */; };
 		235DC8C22B6DC1DB00D5AF4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 235DC8C12B6DC1DB00D5AF4F /* Assets.xcassets */; };
 		235DC8C52B6DC1DB00D5AF4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 235DC8C32B6DC1DB00D5AF4F /* LaunchScreen.storyboard */; };
+		2384547B2B7859EC00F86F49 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 2384547A2B7859EC00F86F49 /* Realm */; };
+		2384547D2B7859EC00F86F49 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2384547C2B7859EC00F86F49 /* RealmSwift */; };
+		2384547F2B785ACA00F86F49 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2384547E2B785ACA00F86F49 /* UserData.swift */; };
 		23EBCA512B716E8F00E74F8E /* CalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EBCA502B716E8F00E74F8E /* CalculatorModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +35,7 @@
 		235DC8C12B6DC1DB00D5AF4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		235DC8C42B6DC1DB00D5AF4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		235DC8C62B6DC1DB00D5AF4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2384547E2B785ACA00F86F49 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		23EBCA502B716E8F00E74F8E /* CalculatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -39,6 +44,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2384547D2B7859EC00F86F49 /* RealmSwift in Frameworks */,
+				2384547B2B7859EC00F86F49 /* Realm in Frameworks */,
+				235415DA2B75C6B9006330B0 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +58,7 @@
 			children = (
 				235CEC632B6F246C00F8353E /* K.swift */,
 				23EBCA502B716E8F00E74F8E /* CalculatorModel.swift */,
+				2384547E2B785ACA00F86F49 /* UserData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -119,6 +128,11 @@
 			dependencies = (
 			);
 			name = "FFMI Calculator";
+			packageProductDependencies = (
+				235415D92B75C6B8006330B0 /* IQKeyboardManagerSwift */,
+				2384547A2B7859EC00F86F49 /* Realm */,
+				2384547C2B7859EC00F86F49 /* RealmSwift */,
+			);
 			productName = "FFMI Calculator";
 			productReference = 235DC8B52B6DC1DA00D5AF4F /* FFMI Calculator.app */;
 			productType = "com.apple.product-type.application";
@@ -147,6 +161,10 @@
 				Base,
 			);
 			mainGroup = 235DC8AC2B6DC1DA00D5AF4F;
+			packageReferences = (
+				235415D82B75C6B8006330B0 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				238454792B7859EC00F86F49 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 235DC8B62B6DC1DA00D5AF4F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -176,6 +194,7 @@
 			files = (
 				235CEC5F2B6F22F300F8353E /* TrendsViewController.swift in Sources */,
 				235DC8BD2B6DC1DA00D5AF4F /* MeasureViewController.swift in Sources */,
+				2384547F2B785ACA00F86F49 /* UserData.swift in Sources */,
 				235DC8B92B6DC1DA00D5AF4F /* AppDelegate.swift in Sources */,
 				235CEC642B6F246C00F8353E /* K.swift in Sources */,
 				235DC8BB2B6DC1DA00D5AF4F /* SceneDelegate.swift in Sources */,
@@ -405,6 +424,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		235415D82B75C6B8006330B0 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.1;
+			};
+		};
+		238454792B7859EC00F86F49 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.46.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		235415D92B75C6B8006330B0 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 235415D82B75C6B8006330B0 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		2384547A2B7859EC00F86F49 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 238454792B7859EC00F86F49 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		2384547C2B7859EC00F86F49 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 238454792B7859EC00F86F49 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 235DC8AD2B6DC1DA00D5AF4F /* Project object */;
 }

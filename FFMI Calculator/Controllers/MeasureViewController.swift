@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MeasureViewController: UIViewController {
     
@@ -13,6 +14,10 @@ class MeasureViewController: UIViewController {
     var unitsImperial: Bool = true
     var knowFat: Bool = true
     var calculatorModel = CalculatorModel()
+    let realm = try! Realm()
+    let dataArray: [UserData] = []
+    var enteredData: Bool = false
+    let defaults = UserDefaults.standard
     
     @IBOutlet weak var heightFtField: UITextField!
     @IBOutlet weak var heightInchField: UITextField!
@@ -45,12 +50,12 @@ class MeasureViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let fieldArray: [UITextField] = [heightFtField, heightInchField, weightField, fatField, neckField, waistField, hipField]
+//        print(Realm.Configuration.defaultConfiguration.fileURL!)
         
-        self.delegateDoneField(fieldArray)
-        
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tap)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         maleButton.isHidden = true
         femaleButton.isHidden = true
@@ -64,7 +69,31 @@ class MeasureViewController: UIViewController {
         let buttonArray: [UIButton] = [maleButton, femaleButton, knowFatButton, dontKnowFatButton, imperialButton, metricButton, calculateButton, resetButton, saveButton, measureButton, trendsButton, methodologyButton, settingsButton]
         
         self.borderButtons(buttonArray)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         
+        if let user = defaults.string(forKey: "Username") {
+            // input something here to put into the settings
+        } else {
+            
+            var textField = UITextField()
+            textField.autocapitalizationType = UITextAutocapitalizationType.words
+            
+            let alert = UIAlertController(title: "No User Found", message: "Please enter your name", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Enter", style: .default) { action in
+                if textField.text != "" {
+                    self.defaults.set(textField.text, forKey: "Username")
+                }
+            }
+            
+            alert.addTextField { alertTextField in
+                alertTextField.placeholder = "Name"
+                textField = alertTextField
+            }
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
+        }
     }
     
     func borderButtons(_ buttonArray: [UIButton]) {
@@ -74,13 +103,12 @@ class MeasureViewController: UIViewController {
         }
     }
     
-    func delegateDoneField(_ fieldArray: [UITextField]) {
-        for txt in fieldArray {
-            txt.delegate = self
-            txt.addDoneButtonOnKeyboard()
-        }
-    }
-    
+    // viewDidLoad, viewWillAppear, viewDidAppear, viewWillDisappear, viewDidDisappear
+    // AppDelegate -> iOS lets us know where we are
+    // two windows -> two separate scenes - this is what the scene delegate is for
+    // AppDelegate -> launched, receiving time changes
+    // SceneDelegate -> window coming into foreground, etc
+    // sceneDidEnterBackground -> good time to save user's data
     
     @IBAction func trendsButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: K.Segue.measureTrends, sender: self)
@@ -140,12 +168,12 @@ class MeasureViewController: UIViewController {
         
         unitsImperial = true
         heightInchField.isHidden = false
-        heightFtField.placeholder = "height (ft)"
-        heightInchField.placeholder = "height (inch)"
-        weightField.placeholder = "weight (lbs)"
-        neckField.placeholder = "neck (inch)"
-        hipField.placeholder = "hip (inch)"
-        waistField.placeholder = "waist (inch)"
+        heightFtField.placeholder = "Height (ft)"
+        heightInchField.placeholder = "Height (in)"
+        weightField.placeholder = "Weight (lbs)"
+        neckField.placeholder = "Neck (in)"
+        hipField.placeholder = "Hip (in)"
+        waistField.placeholder = "Waist (in)"
         imperialButton.backgroundColor = UIColor(named: "darkGreen")
         metricButton.backgroundColor = UIColor(named: "seaGreen")
         resetButtonPressed(sender)
@@ -155,11 +183,11 @@ class MeasureViewController: UIViewController {
         
         unitsImperial = false
         heightInchField.isHidden = true
-        heightFtField.placeholder = "height (cm)"
-        weightField.placeholder = "mass (kg)"
-        neckField.placeholder = "neck (cm)"
-        hipField.placeholder = "hip (cm)"
-        waistField.placeholder = "waist (cm)"
+        heightFtField.placeholder = "Height (cm)"
+        weightField.placeholder = "Mass (kg)"
+        neckField.placeholder = "Neck (cm)"
+        hipField.placeholder = "Hip (cm)"
+        waistField.placeholder = "Waist (cm)"
         imperialButton.backgroundColor = UIColor(named: "seaGreen")
         metricButton.backgroundColor = UIColor(named: "darkGreen")
         resetButtonPressed(sender)
@@ -174,6 +202,7 @@ class MeasureViewController: UIViewController {
     
     @IBAction func resetButtonPressed(_ sender: UIButton) {
         
+        enteredData = false
         heightFtField.text = ""
         heightInchField.text = ""
         weightField.text = ""
@@ -187,6 +216,44 @@ class MeasureViewController: UIViewController {
         
         if sender.currentTitle == "Reset" {
             animateButton(sender)
+        }
+    }
+    
+    
+    @IBAction func saveButtonPressed(_ sender: UIButton) {
+        
+        animateButton(sender)
+        
+        if enteredData == true {
+            
+            let userData = UserData()
+            
+            userData.FFMI = ffmiLabel.text
+            userData.AFFMI = affmiLabel.text
+            userData.fat = fatLabel.text
+            userData.name = "Trenton" // change later
+            
+            userData.heightFt = heightFtField.text
+            userData.heightInch = heightInchField.text
+            userData.weight = weightField.text
+            userData.neck = neckField.text
+            userData.waist = waistField.text
+            userData.hip = hipField.text
+            
+            userData.date = Date().timeIntervalSince1970
+            
+            do {
+                try realm.write {
+                    realm.add(userData)
+                }
+            } catch {
+                print("Error saving data, \(error)")
+            }
+        } else {
+            let alert = UIAlertController(title: "No data to save", message: "Please enter data, click calculate, then click save", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default))
+            present(alert, animated: true, completion: nil)
+            calculatorModel.fillInData(ffmiLabel, affmiLabel, fatLabel)
         }
     }
     
@@ -208,6 +275,9 @@ class MeasureViewController: UIViewController {
                     calculatorModel.updateViewController(FFMI, AFFMI, fat, ffmiLabel, affmiLabel, fatLabel)
                 } else {
                     calculatorModel.fillInData(ffmiLabel, affmiLabel, fatLabel)
+                    let alert = UIAlertController(title: "Lacking data to calculate", message: "Please enter data and click calculate", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                    present(alert, animated: true, completion: nil)
                 }
                 
             //MARK: - Known Fat, Imperial Units
@@ -222,6 +292,9 @@ class MeasureViewController: UIViewController {
                     calculatorModel.updateViewController(FFMI, AFFMI, fat, ffmiLabel, affmiLabel, fatLabel)
                 } else {
                     calculatorModel.fillInData(ffmiLabel, affmiLabel, fatLabel)
+                    let alert = UIAlertController(title: "Lacking data to calculate", message: "Please enter data and click calculate", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                    present(alert, animated: true, completion: nil)
                 }
             }
             
@@ -241,6 +314,9 @@ class MeasureViewController: UIViewController {
                     calculatorModel.updateViewController(FFMI, AFFMI, fat, ffmiLabel, affmiLabel, fatLabel)
                 } else {
                     calculatorModel.fillInData(ffmiLabel, affmiLabel, fatLabel)
+                    let alert = UIAlertController(title: "Lacking data to calculate", message: "Please enter data and click calculate", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                    present(alert, animated: true, completion: nil)
                 }
                 
             //MARK: - Unknown Fat, Imperial Units
@@ -256,47 +332,15 @@ class MeasureViewController: UIViewController {
                     calculatorModel.updateViewController(FFMI, AFFMI, fat, ffmiLabel, affmiLabel, fatLabel)
                 } else {
                     calculatorModel.fillInData(ffmiLabel, affmiLabel, fatLabel)
+                    let alert = UIAlertController(title: "Lacking data to calculate", message: "Please enter data and click calculate", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                    present(alert, animated: true, completion: nil)
                 }
             }
         }
-    }
-}
-
-extension MeasureViewController: UITextFieldDelegate {
-    
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
-}
-
-extension UITextField {
-    
-    @IBInspectable var doneAccessory: Bool{
-            get{
-                return self.doneAccessory
-            }
-            set (hasDone) {
-                if hasDone{
-                    addDoneButtonOnKeyboard()
-                }
-            }
+        
+        if ffmiLabel.text != "Fill in each data entry" {
+            enteredData = true
         }
-    
-    func addDoneButtonOnKeyboard() {
-           let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
-           doneToolbar.barStyle = .default
-           
-           let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-           let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonAction))
-           
-           let items = [flexSpace, done]
-           doneToolbar.items = items
-           doneToolbar.sizeToFit()
-           
-           self.inputAccessoryView = doneToolbar
-       }
-       
-    @objc func doneButtonAction() {
-        self.resignFirstResponder()
     }
 }

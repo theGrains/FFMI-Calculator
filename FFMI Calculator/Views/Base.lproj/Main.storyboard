@@ -24,81 +24,75 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oGu-Vb-YmB" userLabel="KnowFatStack">
-                                <rect key="frame" x="0.0" y="90.333333333333329" width="430" height="34.333333333333329"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="oGu-Vb-YmB" userLabel="KnowFatStack">
+                                <rect key="frame" x="0.0" y="90.333333333333329" width="430" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLz-Gb-2G4">
-                                        <rect key="frame" x="0.0" y="0.0" width="215" height="34.333333333333336"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="I know my fat %">
-                                            <backgroundConfiguration key="background" strokeWidth="1"/>
-                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
+                                        <rect key="frame" x="0.0" y="0.0" width="215" height="30"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="I know my fat %">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="knownFatPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iIG-w7-HWb"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AjN-HO-qOO">
-                                        <rect key="frame" x="215" y="0.0" width="215" height="34.333333333333336"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="I don't know my fat %">
-                                            <backgroundConfiguration key="background" strokeWidth="1"/>
-                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
+                                        <rect key="frame" x="215" y="0.0" width="215" height="30"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="I don't know my fat %">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="unknownFatPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bJd-rH-o35"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sdx-0G-fAg" userLabel="UnitStack">
-                                <rect key="frame" x="0.0" y="124.66666666666667" width="430" height="34.333333333333329"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="sdx-0G-fAg" userLabel="UnitStack">
+                                <rect key="frame" x="0.0" y="120.33333333333331" width="430" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ym5-k0-6Qz">
-                                        <rect key="frame" x="0.0" y="0.0" width="215" height="34.333333333333336"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Imperial">
-                                            <backgroundConfiguration key="background" strokeWidth="1"/>
-                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
+                                        <rect key="frame" x="0.0" y="0.0" width="215" height="30"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Imperial">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="imperialButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cR8-Kl-PTV"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZ2-sg-Be0">
-                                        <rect key="frame" x="215" y="0.0" width="215" height="34.333333333333336"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Metric">
-                                            <backgroundConfiguration key="background" strokeWidth="1"/>
-                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
+                                        <rect key="frame" x="215" y="0.0" width="215" height="30"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Metric">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="metricButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OCV-9f-JQY"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cNB-kc-4Ib" userLabel="OrientationStack">
-                                <rect key="frame" x="0.0" y="159" width="430" height="34.333333333333343"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cNB-kc-4Ib" userLabel="OrientationStack">
+                                <rect key="frame" x="0.0" y="150.33333333333334" width="430" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H5c-wN-eVq">
-                                        <rect key="frame" x="0.0" y="0.0" width="215" height="34.333333333333336"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Male">
-                                            <backgroundConfiguration key="background" strokeWidth="1"/>
-                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
+                                        <rect key="frame" x="0.0" y="0.0" width="215" height="30"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Male">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="maleButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K4J-H0-3FF"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMN-k7-X8j">
-                                        <rect key="frame" x="215" y="0.0" width="215" height="34.333333333333336"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Female">
-                                            <backgroundConfiguration key="background" strokeWidth="1"/>
-                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
+                                        <rect key="frame" x="215" y="0.0" width="215" height="30"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Female">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="femaleButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MUc-rC-Ct9"/>
                                         </connections>
@@ -106,7 +100,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FFMI = " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bzw-24-1YX">
-                                <rect key="frame" x="10" y="217.33333333333334" width="410" height="40.000000000000028"/>
+                                <rect key="frame" x="10" y="208.66666666666666" width="410" height="40"/>
                                 <color key="backgroundColor" name="seaGreen"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Olg-fE-kve"/>
@@ -116,7 +110,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Normalized FFMI = " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHl-yv-Omi">
-                                <rect key="frame" x="10" y="262.33333333333331" width="410" height="40"/>
+                                <rect key="frame" x="10" y="253.66666666666663" width="410" height="40"/>
                                 <color key="backgroundColor" name="seaGreen"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="bbC-MT-WX6"/>
@@ -126,7 +120,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fat % = " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bM-D0-Js1">
-                                <rect key="frame" x="10" y="307.33333333333331" width="410" height="40"/>
+                                <rect key="frame" x="10" y="298.66666666666669" width="410" height="40"/>
                                 <color key="backgroundColor" name="seaGreen"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Gpd-wD-jGI"/>
@@ -136,15 +130,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wnt-MA-WbB" userLabel="HeightStack">
-                                <rect key="frame" x="10" y="352.33333333333331" width="410" height="100"/>
+                                <rect key="frame" x="10" y="343.66666666666669" width="410" height="100"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="height (ft)" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tII-Hk-Mc4">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Height (ft)" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tII-Hk-Mc4">
                                         <rect key="frame" x="0.0" y="0.0" width="205" height="100"/>
                                         <color key="backgroundColor" name="seaGreen"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="height (inch)" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0OO-2u-PmZ">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Height (in)" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0OO-2u-PmZ">
                                         <rect key="frame" x="205" y="0.0" width="205" height="100"/>
                                         <color key="backgroundColor" name="seaGreen"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -155,8 +149,8 @@
                                     <constraint firstAttribute="height" constant="100" id="dre-ac-jaY"/>
                                 </constraints>
                             </stackView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="weight (lbs)" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rkJ-Fx-UXL">
-                                <rect key="frame" x="10" y="457.33333333333331" width="410" height="99.999999999999943"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Weight (lbs)" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rkJ-Fx-UXL">
+                                <rect key="frame" x="10" y="448.66666666666669" width="410" height="100.00000000000006"/>
                                 <color key="backgroundColor" name="seaGreen"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="7vf-BH-Vx8"/>
@@ -165,21 +159,21 @@
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ZKy-tv-mIr" userLabel="BodyStack">
-                                <rect key="frame" x="10" y="562.33333333333337" width="410" height="100"/>
+                                <rect key="frame" x="10" y="553.66666666666663" width="410" height="100"/>
                                 <subviews>
-                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="neck (inch)" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S99-GB-Edo">
+                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Neck (in)" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S99-GB-Edo">
                                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="34"/>
                                         <color key="backgroundColor" name="seaGreen"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                     </textField>
-                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="waist (inch)" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RJn-43-w34" userLabel="Waist Field">
+                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Waist (in)" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RJn-43-w34" userLabel="Waist Field">
                                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="34"/>
                                         <color key="backgroundColor" name="seaGreen"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                     </textField>
-                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="hip (inch)" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="No1-Vo-C67" userLabel="Hip Field">
+                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Hip (in)" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="No1-Vo-C67" userLabel="Hip Field">
                                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="34"/>
                                         <color key="backgroundColor" name="seaGreen"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -190,8 +184,8 @@
                                     <constraint firstAttribute="height" constant="100" id="61k-MW-Aaq"/>
                                 </constraints>
                             </stackView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="fat %" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OdZ-ls-56a">
-                                <rect key="frame" x="10" y="562.33333333333337" width="410" height="100"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Fat %" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OdZ-ls-56a">
+                                <rect key="frame" x="10" y="553.66666666666663" width="410" height="100"/>
                                 <color key="backgroundColor" name="seaGreen"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="KLJ-N0-srL"/>
@@ -200,7 +194,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OPO-Cy-nMB" userLabel="CalculateStack">
-                                <rect key="frame" x="10" y="783.33333333333337" width="410" height="34.333333333333371"/>
+                                <rect key="frame" x="10" y="807.66666666666663" width="410" height="34.333333333333371"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcI-kp-p0c">
                                         <rect key="frame" x="0.0" y="0.0" width="136.66666666666666" height="34.333333333333336"/>
@@ -228,53 +222,48 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                        <connections>
+                                            <action selector="saveButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dy5-Us-wus"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yvr-nq-y9E" userLabel="VCStack">
-                                <rect key="frame" x="10" y="817.66666666666663" width="410" height="54.333333333333371"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Yvr-nq-y9E" userLabel="VCStack">
+                                <rect key="frame" x="10" y="842" width="410" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3LU-Ky-GCK">
-                                        <rect key="frame" x="0.0" y="0.0" width="102.66666666666667" height="54.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="102.66666666666667" height="30"/>
                                         <color key="backgroundColor" name="seaGreen"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Measure">
-                                            <backgroundConfiguration key="background"/>
-                                        </buttonConfiguration>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Measure"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2an-gm-ENI">
-                                        <rect key="frame" x="102.66666666666669" y="0.0" width="102.33333333333331" height="54.333333333333336"/>
+                                        <rect key="frame" x="102.66666666666669" y="0.0" width="102.33333333333331" height="30"/>
                                         <color key="backgroundColor" name="seaGreen"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Trends">
-                                            <backgroundConfiguration key="background"/>
-                                        </buttonConfiguration>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Trends"/>
                                         <connections>
                                             <action selector="trendsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ee3-mr-cyM"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wne-ez-FOL">
-                                        <rect key="frame" x="204.99999999999997" y="0.0" width="102.66666666666666" height="54.333333333333336"/>
+                                        <rect key="frame" x="204.99999999999997" y="0.0" width="102.66666666666666" height="30"/>
                                         <color key="backgroundColor" name="seaGreen"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Methodology">
-                                            <backgroundConfiguration key="background"/>
-                                        </buttonConfiguration>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Methodology"/>
                                         <connections>
                                             <action selector="methodologyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QYq-QA-qSw"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOs-VU-hBW">
-                                        <rect key="frame" x="307.66666666666669" y="0.0" width="102.33333333333331" height="54.333333333333336"/>
+                                        <rect key="frame" x="307.66666666666669" y="0.0" width="102.33333333333331" height="30"/>
                                         <color key="backgroundColor" name="seaGreen"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Settings">
-                                            <backgroundConfiguration key="background"/>
-                                        </buttonConfiguration>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Settings"/>
                                         <connections>
                                             <action selector="settingsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UKL-pm-kgS"/>
                                         </connections>
@@ -287,7 +276,7 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sdx-0G-fAg" secondAttribute="trailing" id="3Rg-a9-ogB"/>
                             <constraint firstItem="3bM-D0-Js1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="5iP-XB-dqO"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cHl-yv-Omi" secondAttribute="trailing" constant="10" id="8vV-cH-TLy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="cHl-yv-Omi" secondAttribute="trailing" constant="10" id="8vV-cH-TLy"/>
                             <constraint firstItem="cNB-kc-4Ib" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9f2-WA-owW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rkJ-Fx-UXL" secondAttribute="trailing" constant="10" id="A9u-V5-hRI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cNB-kc-4Ib" secondAttribute="trailing" id="BhR-M3-KgC"/>
@@ -314,7 +303,7 @@
                             <constraint firstItem="Yvr-nq-y9E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="dgL-DN-oSg"/>
                             <constraint firstItem="cHl-yv-Omi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dkM-ja-yU5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OdZ-ls-56a" secondAttribute="trailing" constant="10" id="gTE-NX-NcR"/>
-                            <constraint firstItem="Bzw-24-1YX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="hr7-2t-N2r"/>
+                            <constraint firstItem="Bzw-24-1YX" firstAttribute="leading" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="hr7-2t-N2r"/>
                             <constraint firstItem="cHl-yv-Omi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="nuk-kW-VS1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Bzw-24-1YX" secondAttribute="trailing" constant="10" id="qVL-SW-lMv"/>
                             <constraint firstItem="sdx-0G-fAg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rPy-DR-Eog"/>
@@ -327,7 +316,7 @@
                             <constraint firstItem="wnt-MA-WbB" firstAttribute="top" secondItem="3bM-D0-Js1" secondAttribute="bottom" constant="5" id="yA4-rk-i1k"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZKy-tv-mIr" secondAttribute="trailing" constant="10" id="zJ8-Bm-XMD"/>
                             <constraint firstItem="ZKy-tv-mIr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="zsF-xx-YFL"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3bM-D0-Js1" secondAttribute="trailing" constant="10" id="zxL-Jg-NnX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="3bM-D0-Js1" secondAttribute="trailing" constant="10" id="zxL-Jg-NnX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="w8m-SR-dGh"/>
@@ -376,6 +365,7 @@
                     <navigationItem key="navigationItem" id="T6R-7x-xfY"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="trendsToMeasure" modalPresentationStyle="fullScreen" id="DvR-8z-N9z"/>
+                        <segue destination="NZy-Od-6hX" kind="presentation" identifier="trendsToMethodology" modalPresentationStyle="fullScreen" id="SzI-PH-bhO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f8S-Bv-6SJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -395,30 +385,18 @@
                     <navigationItem key="navigationItem" id="U0t-Wi-2ru"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="methodologyToMeasure" modalPresentationStyle="fullScreen" id="j86-gl-pCp"/>
+                        <segue destination="IZ5-bO-D16" kind="presentation" identifier="methodologyToTrends" modalPresentationStyle="fullScreen" id="KGV-7t-Fkc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a9g-jR-o2g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="905" y="-35"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Fvx-yy-QPJ">
-            <objects>
-                <viewController id="7xJ-TZ-Lct" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="34q-gE-p2L">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="yxM-5l-pRt"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6vQ-ZT-TsA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="905" y="636"/>
-        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="j86-gl-pCp"/>
+        <segue reference="mYz-lM-f8H"/>
+        <segue reference="dfK-9G-Z5b"/>
+        <segue reference="DvR-8z-N9z"/>
     </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="regularGreen">

@@ -52,6 +52,7 @@ struct CalculatorModel {
     }
     
     func fillInData(_ ffmiLabel: UILabel, _ affmiLabel: UILabel, _ fatLabel: UILabel) {
+        
         ffmiLabel.text = "Fill in each data entry"
         affmiLabel.text = "Fill in each data entry"
         fatLabel.text = "Fill in each data entry"
