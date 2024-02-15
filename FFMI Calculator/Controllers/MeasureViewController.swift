@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import SkyFloatingLabelTextField
 
 class MeasureViewController: UIViewController {
     
@@ -19,13 +20,13 @@ class MeasureViewController: UIViewController {
     var enteredData: Bool = false
     let defaults = UserDefaults.standard
     
-    @IBOutlet weak var heightFtField: UITextField!
-    @IBOutlet weak var heightInchField: UITextField!
-    @IBOutlet weak var weightField: UITextField!
-    @IBOutlet weak var fatField: UITextField!
-    @IBOutlet weak var neckField: UITextField!
-    @IBOutlet weak var hipField: UITextField!
-    @IBOutlet weak var waistField: UITextField!
+    @IBOutlet weak var heightFtField: SkyFloatingLabelTextField!
+    @IBOutlet weak var heightInchField: SkyFloatingLabelTextField!
+    @IBOutlet weak var weightField: SkyFloatingLabelTextField!
+    @IBOutlet weak var fatField: SkyFloatingLabelTextField!
+    @IBOutlet weak var neckField: SkyFloatingLabelTextField!
+    @IBOutlet weak var hipField: SkyFloatingLabelTextField!
+    @IBOutlet weak var waistField: SkyFloatingLabelTextField!
     
     @IBOutlet weak var ffmiLabel: UILabel!
     @IBOutlet weak var affmiLabel: UILabel!
@@ -57,7 +58,7 @@ class MeasureViewController: UIViewController {
         super.viewDidLoad()
         
 //        print(Realm.Configuration.defaultConfiguration.fileURL!)
-        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,15 +74,24 @@ class MeasureViewController: UIViewController {
         maleButton.backgroundColor = UIColor.darkGreen
         femaleButton.backgroundColor = UIColor.seaGreen
         
-        let buttonArray: [UIButton] = [maleButton, femaleButton, knowFatButton, dontKnowFatButton, imperialButton, metricButton, calculateButton, resetButton, saveButton, measureButton, trendsButton, methodologyButton, settingsButton]
-        
+        let buttonArray: [UIButton] = [maleButton, femaleButton, knowFatButton, dontKnowFatButton, imperialButton, metricButton, measureButton, trendsButton, methodologyButton, settingsButton]
         self.borderButtons(buttonArray)
+        
+        let actionButtonArray: [UIButton] = [calculateButton, resetButton, saveButton]
+        self.borderButtons2(actionButtonArray)
+        
+        let fieldArray: [SkyFloatingLabelTextField] = [heightFtField, heightInchField, weightField, fatField, neckField, waistField, hipField]
+        
+        for tf in fieldArray {
+            tf.titleLabel.textAlignment = .right
+            tf.textAlignment = .right
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
         if let user = defaults.string(forKey: "Username") {
-            // input something here to put into the settings
+            // input something here to put into the settings tab
         } else {
             
             var textField = UITextField()
@@ -105,8 +115,15 @@ class MeasureViewController: UIViewController {
     
     func borderButtons(_ buttonArray: [UIButton]) {
         for button in buttonArray {
-            button.layer.borderWidth = 2.0
+            button.layer.borderWidth = 1.0
             button.layer.borderColor = UIColor.darkGreen.cgColor
+        }
+    }
+    
+    func borderButtons2(_ buttonArray: [UIButton]) {
+        for button in buttonArray {
+            button.layer.borderWidth = 1.0
+            button.layer.borderColor = UIColor.seaGreen.cgColor
         }
     }
     
@@ -144,6 +161,7 @@ class MeasureViewController: UIViewController {
     @IBAction func unknownFatPressed(_ sender: UIButton) {
         
         knowFat = false
+        hipField.isHidden = true
         placeholderLabel.isHidden = true
         orientationStack.isHidden = false
         bodyStack.isHidden = false
@@ -155,6 +173,7 @@ class MeasureViewController: UIViewController {
     
     @IBAction func maleButtonPressed(_ sender: UIButton) {
         orientationMale = true
+        hipField.isHidden = true
         maleButton.backgroundColor = UIColor(named: "darkGreen")
         femaleButton.backgroundColor = UIColor(named: "seaGreen")
         resetButtonPressed(sender)
@@ -162,6 +181,7 @@ class MeasureViewController: UIViewController {
     
     @IBAction func femaleButtonPressed(_ sender: UIButton) {
         orientationMale = false
+        hipField.isHidden = false
         maleButton.backgroundColor = UIColor(named: "seaGreen")
         femaleButton.backgroundColor = UIColor(named: "darkGreen")
         resetButtonPressed(sender)
@@ -305,8 +325,9 @@ class MeasureViewController: UIViewController {
 
         } else if knowFat == false {
             if unitsImperial == false {
-                if let weightKg = Float(weightField.text!), let heightCm = Float(heightFtField.text!), let waistCm = Float(waistField.text!), let hipCm = Float(hipField.text!), let neckCm = Float(neckField.text!) {
+                if let weightKg = Float(weightField.text!), let heightCm = Float(heightFtField.text!), let waistCm = Float(waistField.text!), let neckCm = Float(neckField.text!) {
                     
+                    let hipCm = Float(hipField.text!) ?? nil
                     let imperial = calculatorModel.convertMetricToImperialFat(orientationMale, waistCm, neckCm, hipCm)
                     let data = calculatorModel.convertMetricToImperialFFMI(heightCm, weightKg)
                     let fat = calculatorModel.calculateBodyFat(orientationMale, imperial[0], imperial[1], imperial[2], data[0], data[1])
@@ -325,8 +346,9 @@ class MeasureViewController: UIViewController {
             //MARK: - Unknown Fat, Imperial Units
 
             } else if unitsImperial == true {
-                if let weight = Float(weightField.text!), let heightFt = Float(heightFtField.text!), let heightInch = Float(heightInchField.text!), let waist = Float(waistField.text!), let hip = Float(hipField.text!), let neck = Float(neckField.text!) {
+                if let weight = Float(weightField.text!), let heightFt = Float(heightFtField.text!), let heightInch = Float(heightInchField.text!), let waist = Float(waistField.text!), let neck = Float(neckField.text!) {
                     
+                    let hip = Float(hipField.text!) ?? nil
                     let fat = calculatorModel.calculateBodyFat(orientationMale, waist, neck, hip, heightFt, heightInch)
                     let FFMIS = calculatorModel.calculateFFMI(heightFt, heightInch, weight, fat)
                     let FFMI = FFMIS[0]

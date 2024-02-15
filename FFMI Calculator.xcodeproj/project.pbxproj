@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2300BBC62B7E92B900C3148A /* FloatingLabelInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2300BBC52B7E92B900C3148A /* FloatingLabelInput.swift */; };
+		2300BBC92B7E94EC00C3148A /* SkyFloatingLabelTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 2300BBC82B7E94EC00C3148A /* SkyFloatingLabelTextField */; };
+		232D58E82B7ADB1300E690B0 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 232D58E72B7ADB1300E690B0 /* DGCharts */; };
+		232D58EA2B7ADB1300E690B0 /* DGChartsDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 232D58E92B7ADB1300E690B0 /* DGChartsDynamic */; };
 		235415DA2B75C6B9006330B0 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 235415D92B75C6B8006330B0 /* IQKeyboardManagerSwift */; };
 		235CEC5F2B6F22F300F8353E /* TrendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235CEC5E2B6F22F300F8353E /* TrendsViewController.swift */; };
 		235CEC612B6F233800F8353E /* MethodologyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235CEC602B6F233800F8353E /* MethodologyViewController.swift */; };
@@ -24,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2300BBC52B7E92B900C3148A /* FloatingLabelInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingLabelInput.swift; sourceTree = "<group>"; };
 		235CEC5E2B6F22F300F8353E /* TrendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsViewController.swift; sourceTree = "<group>"; };
 		235CEC602B6F233800F8353E /* MethodologyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodologyViewController.swift; sourceTree = "<group>"; };
 		235CEC632B6F246C00F8353E /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
@@ -44,9 +49,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				232D58E82B7ADB1300E690B0 /* DGCharts in Frameworks */,
 				2384547D2B7859EC00F86F49 /* RealmSwift in Frameworks */,
 				2384547B2B7859EC00F86F49 /* Realm in Frameworks */,
+				232D58EA2B7ADB1300E690B0 /* DGChartsDynamic in Frameworks */,
 				235415DA2B75C6B9006330B0 /* IQKeyboardManagerSwift in Frameworks */,
+				2300BBC92B7E94EC00C3148A /* SkyFloatingLabelTextField in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +67,7 @@
 				235CEC632B6F246C00F8353E /* K.swift */,
 				23EBCA502B716E8F00E74F8E /* CalculatorModel.swift */,
 				2384547E2B785ACA00F86F49 /* UserData.swift */,
+				2300BBC52B7E92B900C3148A /* FloatingLabelInput.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -132,6 +141,9 @@
 				235415D92B75C6B8006330B0 /* IQKeyboardManagerSwift */,
 				2384547A2B7859EC00F86F49 /* Realm */,
 				2384547C2B7859EC00F86F49 /* RealmSwift */,
+				232D58E72B7ADB1300E690B0 /* DGCharts */,
+				232D58E92B7ADB1300E690B0 /* DGChartsDynamic */,
+				2300BBC82B7E94EC00C3148A /* SkyFloatingLabelTextField */,
 			);
 			productName = "FFMI Calculator";
 			productReference = 235DC8B52B6DC1DA00D5AF4F /* FFMI Calculator.app */;
@@ -164,6 +176,8 @@
 			packageReferences = (
 				235415D82B75C6B8006330B0 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				238454792B7859EC00F86F49 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				232D58E62B7ADB1300E690B0 /* XCRemoteSwiftPackageReference "Charts" */,
+				2300BBC72B7E94EB00C3148A /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */,
 			);
 			productRefGroup = 235DC8B62B6DC1DA00D5AF4F /* Products */;
 			projectDirPath = "";
@@ -194,6 +208,7 @@
 			files = (
 				235CEC5F2B6F22F300F8353E /* TrendsViewController.swift in Sources */,
 				235DC8BD2B6DC1DA00D5AF4F /* MeasureViewController.swift in Sources */,
+				2300BBC62B7E92B900C3148A /* FloatingLabelInput.swift in Sources */,
 				2384547F2B785ACA00F86F49 /* UserData.swift in Sources */,
 				235DC8B92B6DC1DA00D5AF4F /* AppDelegate.swift in Sources */,
 				235CEC642B6F246C00F8353E /* K.swift in Sources */,
@@ -426,6 +441,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2300BBC72B7E94EB00C3148A /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Skyscanner/SkyFloatingLabelTextField.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		232D58E62B7ADB1300E690B0 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		235415D82B75C6B8006330B0 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
@@ -445,6 +476,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2300BBC82B7E94EC00C3148A /* SkyFloatingLabelTextField */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2300BBC72B7E94EB00C3148A /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */;
+			productName = SkyFloatingLabelTextField;
+		};
+		232D58E72B7ADB1300E690B0 /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 232D58E62B7ADB1300E690B0 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
+		};
+		232D58E92B7ADB1300E690B0 /* DGChartsDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 232D58E62B7ADB1300E690B0 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGChartsDynamic;
+		};
 		235415D92B75C6B8006330B0 /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 235415D82B75C6B8006330B0 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
