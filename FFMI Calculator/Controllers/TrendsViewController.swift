@@ -10,7 +10,7 @@ import DGCharts
 import TinyConstraints
 import RealmSwift
 
-class TrendsViewController: UIViewController{
+class TrendsViewController: UIViewController, AxisValueFormatter{
     
     let realm = try! Realm()
     var userData: Results<UserData>?
@@ -36,8 +36,8 @@ class TrendsViewController: UIViewController{
         lineChartView.rightAxis.enabled = false
         
         lineChartView.leftAxis.labelFont = .boldSystemFont(ofSize: 12)
-        lineChartView.leftAxis.labelTextColor = .white
-        lineChartView.leftAxis.axisLineColor = .white
+        lineChartView.leftAxis.labelTextColor = .darkBlue
+        lineChartView.leftAxis.axisLineColor = .darkGreen
         lineChartView.leftAxis.labelPosition = .outsideChart
         // could need to change these two depending on the possibility of values
         lineChartView.leftAxis.axisMaximum = 40
@@ -45,7 +45,7 @@ class TrendsViewController: UIViewController{
         
         lineChartView.xAxis.labelPosition = .bottom
         lineChartView.xAxis.labelFont = .boldSystemFont(ofSize: 12) // change based on how many labels
-        lineChartView.xAxis.axisLineColor = UIColor.darkBlue
+        lineChartView.xAxis.axisLineColor = .darkGreen
         lineChartView.xAxis.axisMaxLabels = 10 // may need to adjust this later as well
         lineChartView.extraRightOffset = 30
         
@@ -71,35 +71,55 @@ class TrendsViewController: UIViewController{
     func setData(_ userData: Results<UserData>) {
         
         var FFMIplot: [ChartDataEntry] = []
+        var count = 0.0
         for dp in userData {
             let FFMIvalue = dp.FFMI!.index(dp.FFMI!.endIndex, offsetBy: -5)..<dp.FFMI!.endIndex
-            FFMIplot.append(ChartDataEntry(x: dp.date, y: Double(dp.FFMI![FFMIvalue])!))
+            FFMIplot.append(ChartDataEntry(x: count, y: Double(dp.FFMI![FFMIvalue])!))
+            count += 1
         }
         
+        count = 0.0
         
         let set = LineChartDataSet(entries: FFMIplot, label: "FFMI")
         set.drawHorizontalHighlightIndicatorEnabled = false
-        set.valueFont = UIFont(name: "Verdana", size: 14)!
+        set.valueFont = UIFont(name: "Verdana", size: 10)!
+        set.setCircleColor(UIColor.seaGreen)
+        set.circleHoleColor = .white
+        set.valueTextColor = UIColor.seaGreen
+        set.mode = .cubicBezier
+        set.lineWidth = 3
+        set.setColor(.seaGreen)
+        set.highlightLineWidth = 1
+        set.highlightColor = UIColor.seaGreen
+        set.highlightLineDashLengths = [10.0]
+        
+        let gradientColors = [UIColor.seaGreen.cgColor, UIColor.seaGreen.cgColor, UIColor.regularGreen.cgColor] as CFArray
+        let colorLocations: [CGFloat] = [1.0, 0.25, 0.0]
+        let gradient = CGGradient.init(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: gradientColors, locations: colorLocations)
+        set.fill = LinearGradientFill(gradient: gradient!, angle: 90.0)
+        set.drawFilledEnabled = true
+        
         let plot = LineChartData(dataSet: set)
         lineChartView.data = plot
-    
     }
+    
+    func stringForValue(_ value: Double, axis: DGCharts.AxisBase?) -> String {
+        
+        let userData = realm.objects(UserData.self)
+        dateFormatter.dateFormat = "MM/dd" // need to change depending on metric vs. imperial
+        return dateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(userData[Int(value)].date)))
+    }
+    
     
     @IBAction func measureButtonPressed(_ sender: UIButton) {
         self.performSegue(withIdentifier: "trendsToMeasure", sender: self)
     }
 }
 
-extension TrendsViewController: ChartViewDelegate, AxisValueFormatter {
-    
-    func stringForValue(_ value: Double, axis: DGCharts.AxisBase?) -> String {
-        dateFormatter.dateFormat = "MM/dd" // need to change depending on metric vs. imperial
-        return dateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(value)))
-    }
-    
+extension TrendsViewController: ChartViewDelegate {
     
     func chartValueSelected(_ chartView: ChartViewBase, _ entry: ChartDataEntry, _ highlight: Highlight) {
-        
+
     }
     
     func chartValueNothingSelected(_ chartView: ChartViewBase) {
