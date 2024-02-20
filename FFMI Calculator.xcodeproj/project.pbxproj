@@ -21,6 +21,7 @@
 		235DC8C02B6DC1DA00D5AF4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 235DC8BE2B6DC1DA00D5AF4F /* Main.storyboard */; };
 		235DC8C22B6DC1DB00D5AF4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 235DC8C12B6DC1DB00D5AF4F /* Assets.xcassets */; };
 		235DC8C52B6DC1DB00D5AF4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 235DC8C32B6DC1DB00D5AF4F /* LaunchScreen.storyboard */; };
+		237DE6B72B8024CB0054B64A /* TinyConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = 237DE6B62B8024CB0054B64A /* TinyConstraints */; };
 		2384547B2B7859EC00F86F49 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 2384547A2B7859EC00F86F49 /* Realm */; };
 		2384547D2B7859EC00F86F49 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2384547C2B7859EC00F86F49 /* RealmSwift */; };
 		2384547F2B785ACA00F86F49 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2384547E2B785ACA00F86F49 /* UserData.swift */; };
@@ -49,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				237DE6B72B8024CB0054B64A /* TinyConstraints in Frameworks */,
 				232D58E82B7ADB1300E690B0 /* DGCharts in Frameworks */,
 				2384547D2B7859EC00F86F49 /* RealmSwift in Frameworks */,
 				2384547B2B7859EC00F86F49 /* Realm in Frameworks */,
@@ -144,6 +146,7 @@
 				232D58E72B7ADB1300E690B0 /* DGCharts */,
 				232D58E92B7ADB1300E690B0 /* DGChartsDynamic */,
 				2300BBC82B7E94EC00C3148A /* SkyFloatingLabelTextField */,
+				237DE6B62B8024CB0054B64A /* TinyConstraints */,
 			);
 			productName = "FFMI Calculator";
 			productReference = 235DC8B52B6DC1DA00D5AF4F /* FFMI Calculator.app */;
@@ -178,6 +181,7 @@
 				238454792B7859EC00F86F49 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				232D58E62B7ADB1300E690B0 /* XCRemoteSwiftPackageReference "Charts" */,
 				2300BBC72B7E94EB00C3148A /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */,
+				237DE6B52B8024CB0054B64A /* XCRemoteSwiftPackageReference "TinyConstraints" */,
 			);
 			productRefGroup = 235DC8B62B6DC1DA00D5AF4F /* Products */;
 			projectDirPath = "";
@@ -465,6 +469,14 @@
 				minimumVersion = 7.0.1;
 			};
 		};
+		237DE6B52B8024CB0054B64A /* XCRemoteSwiftPackageReference "TinyConstraints" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/roberthein/TinyConstraints.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.2;
+			};
+		};
 		238454792B7859EC00F86F49 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -495,6 +507,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 235415D82B75C6B8006330B0 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
+		};
+		237DE6B62B8024CB0054B64A /* TinyConstraints */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 237DE6B52B8024CB0054B64A /* XCRemoteSwiftPackageReference "TinyConstraints" */;
+			productName = TinyConstraints;
 		};
 		2384547A2B7859EC00F86F49 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
