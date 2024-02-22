@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2300BBC62B7E92B900C3148A /* FloatingLabelInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2300BBC52B7E92B900C3148A /* FloatingLabelInput.swift */; };
 		2300BBC92B7E94EC00C3148A /* SkyFloatingLabelTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 2300BBC82B7E94EC00C3148A /* SkyFloatingLabelTextField */; };
+		23111BE92B854B2E00BA1848 /* ChartPresets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23111BE82B854B2E00BA1848 /* ChartPresets.swift */; };
+		23111BF82B855A0700BA1848 /* CustomMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23111BF62B855A0700BA1848 /* CustomMarkerView.swift */; };
+		23111BF92B855A0700BA1848 /* CustomMarkerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23111BF72B855A0700BA1848 /* CustomMarkerView.xib */; };
+		23111BFB2B857E1100BA1848 /* CreateChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23111BFA2B857E1100BA1848 /* CreateChart.swift */; };
 		232D58E82B7ADB1300E690B0 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 232D58E72B7ADB1300E690B0 /* DGCharts */; };
 		232D58EA2B7ADB1300E690B0 /* DGChartsDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 232D58E92B7ADB1300E690B0 /* DGChartsDynamic */; };
 		235415DA2B75C6B9006330B0 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 235415D92B75C6B8006330B0 /* IQKeyboardManagerSwift */; };
@@ -29,7 +32,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2300BBC52B7E92B900C3148A /* FloatingLabelInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingLabelInput.swift; sourceTree = "<group>"; };
+		23111BE82B854B2E00BA1848 /* ChartPresets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartPresets.swift; sourceTree = "<group>"; };
+		23111BF62B855A0700BA1848 /* CustomMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMarkerView.swift; sourceTree = "<group>"; };
+		23111BF72B855A0700BA1848 /* CustomMarkerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomMarkerView.xib; sourceTree = "<group>"; };
+		23111BFA2B857E1100BA1848 /* CreateChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChart.swift; sourceTree = "<group>"; };
 		235CEC5E2B6F22F300F8353E /* TrendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsViewController.swift; sourceTree = "<group>"; };
 		235CEC602B6F233800F8353E /* MethodologyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodologyViewController.swift; sourceTree = "<group>"; };
 		235CEC632B6F246C00F8353E /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
@@ -69,7 +75,8 @@
 				235CEC632B6F246C00F8353E /* K.swift */,
 				23EBCA502B716E8F00E74F8E /* CalculatorModel.swift */,
 				2384547E2B785ACA00F86F49 /* UserData.swift */,
-				2300BBC52B7E92B900C3148A /* FloatingLabelInput.swift */,
+				23111BE82B854B2E00BA1848 /* ChartPresets.swift */,
+				23111BFA2B857E1100BA1848 /* CreateChart.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -119,6 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				235DC8BE2B6DC1DA00D5AF4F /* Main.storyboard */,
+				23111BF62B855A0700BA1848 /* CustomMarkerView.swift */,
+				23111BF72B855A0700BA1848 /* CustomMarkerView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -198,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				235DC8C52B6DC1DB00D5AF4F /* LaunchScreen.storyboard in Resources */,
+				23111BF92B855A0700BA1848 /* CustomMarkerView.xib in Resources */,
 				235DC8C22B6DC1DB00D5AF4F /* Assets.xcassets in Resources */,
 				235DC8C02B6DC1DA00D5AF4F /* Main.storyboard in Resources */,
 			);
@@ -211,11 +221,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				235CEC5F2B6F22F300F8353E /* TrendsViewController.swift in Sources */,
+				23111BE92B854B2E00BA1848 /* ChartPresets.swift in Sources */,
 				235DC8BD2B6DC1DA00D5AF4F /* MeasureViewController.swift in Sources */,
-				2300BBC62B7E92B900C3148A /* FloatingLabelInput.swift in Sources */,
+				23111BF82B855A0700BA1848 /* CustomMarkerView.swift in Sources */,
 				2384547F2B785ACA00F86F49 /* UserData.swift in Sources */,
 				235DC8B92B6DC1DA00D5AF4F /* AppDelegate.swift in Sources */,
 				235CEC642B6F246C00F8353E /* K.swift in Sources */,
+				23111BFB2B857E1100BA1848 /* CreateChart.swift in Sources */,
 				235DC8BB2B6DC1DA00D5AF4F /* SceneDelegate.swift in Sources */,
 				235CEC612B6F233800F8353E /* MethodologyViewController.swift in Sources */,
 				23EBCA512B716E8F00E74F8E /* CalculatorModel.swift in Sources */,
