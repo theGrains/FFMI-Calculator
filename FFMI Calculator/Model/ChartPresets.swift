@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import DGCharts
+import RealmSwift
 
 struct ChartPresets {
     
@@ -24,6 +25,7 @@ struct ChartPresets {
         lineChartView.leftAxis.axisMaximum = 40
         lineChartView.leftAxis.axisMinimum = 12
         
+        lineChartView.xAxis.setLabelCount(8, force: true)
         lineChartView.xAxis.labelPosition = .bottom
         lineChartView.xAxis.labelFont = .boldSystemFont(ofSize: 12) // change based on how many labels
         lineChartView.xAxis.axisLineColor = .darkGreen
@@ -32,6 +34,7 @@ struct ChartPresets {
         
         lineChartView.pinchZoomEnabled = false
         lineChartView.doubleTapToZoomEnabled = false
+        
     }
     
     static func lineChartSetPreset(_ set: LineChartDataSet) {

@@ -26,5 +26,8 @@ class CreateChart {
         let set = LineChartDataSet(entries: data, label: "FFMI")
         ChartPresets.lineChartSetPreset(set)
         lineChartView.data = LineChartData(dataSet: set)
+        // the following two need to be after this line
+        lineChartView.setVisibleXRangeMaximum(7)
+        lineChartView.moveViewToX(Double(userData.count-1))
     }
 }

@@ -33,11 +33,6 @@ class TrendsViewController: UIViewController {
         
         let userData = realm.objects(UserData.self)
         
-        if userData.count < 8 {
-            lineChartView.xAxis.setLabelCount(userData.count, force: true)
-        } else {
-            
-        }
         ChartPresets.lineChartPreset(lineChartView)
         
         CreateChart.setData(userData, lineChartView)
@@ -75,13 +70,17 @@ extension TrendsViewController: ChartViewDelegate, AxisValueFormatter {
         customMarkerView.currentDataLabel.text = userData[Int(entry.x)].FFMI
         customMarkerView.dateLabel.text = dateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(userData[Int(entry.x)].date)))
         
+        let contentView = customMarkerView.getMarker()
+        self.view.bringSubviewToFront(contentView)
+        
         if Int(entry.x) == 0 {
-            customMarkerView.changeFrame(CGRect(x: 0, y: -80, width: 93, height: 38))
-        } else if Int(entry.x) == userData.count-1 { // change this to be final somehow
-            customMarkerView.changeFrame(CGRect(x: -93, y: -80, width: 93, height: 38))
+            customMarkerView.changeFrame(CGRect(x: 0, y: -240, width: 93, height: 138))
+        } else if Int(entry.x) == userData.count-1 {
+            customMarkerView.changeFrame(CGRect(x: -93, y: -240, width: 93, height: 138))
         } else {
-            customMarkerView.changeFrame(CGRect(x: -46, y: -80, width: 93, height: 38))
+            customMarkerView.changeFrame(CGRect(x: -46, y: -240, width: 93, height: 138))
         }
+        
         
     }
     
