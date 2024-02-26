@@ -64,7 +64,7 @@ struct CalculatorModel {
         ffmiLabel.text = "FFMI = \(FFMItext)"
         
         let AFFMItext = String(format: "%.2f", AFFMI)
-        affmiLabel.text = "Normalized FFMI = \(AFFMItext)"
+        affmiLabel.text = "Adjusted FFMI = \(AFFMItext)"
         
         let fatText = String(format: "%.2f", fat)
         fatLabel.text = "Fat % = \(fatText)%"

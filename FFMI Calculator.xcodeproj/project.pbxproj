@@ -28,6 +28,7 @@
 		2384547B2B7859EC00F86F49 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 2384547A2B7859EC00F86F49 /* Realm */; };
 		2384547D2B7859EC00F86F49 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2384547C2B7859EC00F86F49 /* RealmSwift */; };
 		2384547F2B785ACA00F86F49 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2384547E2B785ACA00F86F49 /* UserData.swift */; };
+		23898BC72B8BAAA900D0F8EF /* XAxisNameFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23898BC62B8BAAA900D0F8EF /* XAxisNameFormatter.swift */; };
 		23EBCA512B716E8F00E74F8E /* CalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EBCA502B716E8F00E74F8E /* CalculatorModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		235DC8C42B6DC1DB00D5AF4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		235DC8C62B6DC1DB00D5AF4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2384547E2B785ACA00F86F49 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		23898BC62B8BAAA900D0F8EF /* XAxisNameFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XAxisNameFormatter.swift; sourceTree = "<group>"; };
 		23EBCA502B716E8F00E74F8E /* CalculatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +79,7 @@
 				2384547E2B785ACA00F86F49 /* UserData.swift */,
 				23111BE82B854B2E00BA1848 /* ChartPresets.swift */,
 				23111BFA2B857E1100BA1848 /* CreateChart.swift */,
+				23898BC62B8BAAA900D0F8EF /* XAxisNameFormatter.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				235CEC5F2B6F22F300F8353E /* TrendsViewController.swift in Sources */,
+				23898BC72B8BAAA900D0F8EF /* XAxisNameFormatter.swift in Sources */,
 				23111BE92B854B2E00BA1848 /* ChartPresets.swift in Sources */,
 				235DC8BD2B6DC1DA00D5AF4F /* MeasureViewController.swift in Sources */,
 				23111BF82B855A0700BA1848 /* CustomMarkerView.swift in Sources */,

@@ -234,7 +234,7 @@ class MeasureViewController: UIViewController {
         hipField.text = ""
         neckField.text = ""
         ffmiLabel.text = "FFMI ="
-        affmiLabel.text = "Normalized FFMI ="
+        affmiLabel.text = "Adjusted FFMI ="
         fatLabel.text = "Fat % ="
         
         if sender.currentTitle == "Reset" {
@@ -254,7 +254,7 @@ class MeasureViewController: UIViewController {
             userData.FFMI = ffmiLabel.text
             userData.AFFMI = affmiLabel.text
             userData.fat = fatLabel.text
-            userData.name = "Trenton" // change later
+            userData.name = defaults.string(forKey: "Username")!
             
             userData.heightFt = heightFtField.text
             userData.heightInch = heightInchField.text

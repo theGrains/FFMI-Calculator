@@ -13,6 +13,12 @@ class CustomMarkerView: MarkerView {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var currentDataLabel: UILabel!
+    @IBOutlet weak var affmiLabel: UILabel!
+    @IBOutlet weak var fatLabel: UILabel!
+    @IBOutlet weak var weightLabel: UILabel!
+    @IBOutlet weak var neckLabe: UILabel!
+    @IBOutlet weak var waistLabel: UILabel!
+    @IBOutlet weak var hipLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

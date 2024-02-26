@@ -11,8 +11,8 @@ import DGCharts
 import RealmSwift
 
 struct ChartPresets {
-    
-    static func lineChartPreset(_ lineChartView: LineChartView) {
+        
+    static func lineChartPreset(_ lineChartView: LineChartView, _ userData: Results<UserData>, _ xFormatter: XAxisNameFormatter) {
         
         lineChartView.backgroundColor = UIColor.regularGreen
         lineChartView.rightAxis.enabled = false
@@ -23,13 +23,18 @@ struct ChartPresets {
         lineChartView.leftAxis.labelPosition = .outsideChart
         // could need to change these two depending on the possibility of values
         lineChartView.leftAxis.axisMaximum = 40
-        lineChartView.leftAxis.axisMinimum = 12
+        lineChartView.leftAxis.axisMinimum = 10
         
-        lineChartView.xAxis.setLabelCount(8, force: true)
+        if userData.count >= 8 {
+            lineChartView.xAxis.setLabelCount(8, force: true)
+        } else {
+            lineChartView.xAxis.setLabelCount(userData.count, force: true)
+        }
+        
         lineChartView.xAxis.labelPosition = .bottom
         lineChartView.xAxis.labelFont = .boldSystemFont(ofSize: 12) // change based on how many labels
         lineChartView.xAxis.axisLineColor = .darkGreen
-        lineChartView.xAxis.axisMaxLabels = 10 // may need to adjust this later as well
+        lineChartView.xAxis.axisMaxLabels = 8
         lineChartView.extraRightOffset = 30
         
         lineChartView.pinchZoomEnabled = false

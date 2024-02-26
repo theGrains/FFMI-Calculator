@@ -12,9 +12,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomMarkerView" customModule="FFMI_Calculator" customModuleProvider="target">
             <connections>
+                <outlet property="affmiLabel" destination="8DR-Oh-Lh2" id="zSs-7w-0OY"/>
                 <outlet property="contentView" destination="1vb-HW-Ud9" id="sfA-oz-bDR"/>
                 <outlet property="currentDataLabel" destination="9bU-6q-WtK" id="dfQ-QN-n2b"/>
                 <outlet property="dateLabel" destination="R4Q-jd-X6w" id="HFD-vT-LQC"/>
+                <outlet property="fatLabel" destination="uU1-ch-UCZ" id="cXr-Yd-5zE"/>
+                <outlet property="hipLabel" destination="mh2-51-V8s" id="JaL-cS-Dpw"/>
+                <outlet property="neckLabe" destination="QWL-ZS-OHe" id="A2H-g5-oXb"/>
+                <outlet property="waistLabel" destination="miP-Dv-Jzn" id="sAX-KS-APS"/>
+                <outlet property="weightLabel" destination="Zk5-eW-K54" id="QeZ-ZU-C0v"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
