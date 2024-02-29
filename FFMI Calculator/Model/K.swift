@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import UIKit
+import SkyFloatingLabelTextField
 
 struct K {
     
@@ -28,5 +30,27 @@ struct K {
         static let settingsMethodology = "settingsToMethodology"
     }
     
-    
+    struct ChangeBorder {
+        
+        static func borderVCButtons(_ buttonArray: [UIButton]) {
+            for button in buttonArray {
+                button.layer.borderWidth = 1.0
+                button.layer.borderColor = UIColor.darkGreen.cgColor
+            }
+        }
+        
+        static func borderOptionButtons(_ buttonArray: [UIButton]) {
+            for button in buttonArray {
+                button.layer.borderWidth = 1.0
+                button.layer.borderColor = UIColor.darkGreen.cgColor
+            }
+        }
+        
+        static func changeTextFields(_ fieldArray: [SkyFloatingLabelTextField]) {
+            for tf in fieldArray {
+                tf.titleLabel.textAlignment = .right
+                tf.textAlignment = .right
+            }
+        }
+    }
 }

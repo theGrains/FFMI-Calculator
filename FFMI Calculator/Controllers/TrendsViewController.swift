@@ -43,21 +43,16 @@ class TrendsViewController: UIViewController {
         
         CreateChart.setData(userData!, lineChartView)
         
-        let actionButtonArray: [UIButton] = [measureButton, methodologyButton, settingsButton]
-        self.borderButtons(actionButtonArray)
+        let VCButtonArray: [UIButton] = [measureButton, methodologyButton, settingsButton]
+        K.ChangeBorder.borderVCButtons(VCButtonArray)
 //       print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
     
-    func borderButtons(_ buttonArray: [UIButton]) {
-        for button in buttonArray {
-            button.layer.borderWidth = 1.0
-            button.layer.borderColor = UIColor.darkGreen.cgColor
-        }
+    
+    @IBAction func changeVCButtonPressed(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "trendsTo\(sender.currentTitle!)", sender: self)
     }
     
-    @IBAction func measureButtonPressed(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "trendsToMeasure", sender: self)
-    }
     
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
         
@@ -129,12 +124,10 @@ extension TrendsViewController: ChartViewDelegate, AxisValueFormatter {
             customMarkerView.changeFrame(CGRect(x: -46, y: -240, width: 93, height: markerHeight))
         }
         
-        
     }
     
     func chartValueNothingSelected(_ chartView: ChartViewBase) {
         
         deleteButton.alpha = 0.5
     }
-    
 }

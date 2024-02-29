@@ -21,7 +21,6 @@ struct ChartPresets {
         lineChartView.leftAxis.labelTextColor = .darkBlue
         lineChartView.leftAxis.axisLineColor = .darkGreen
         lineChartView.leftAxis.labelPosition = .outsideChart
-        // could need to change these two depending on the possibility of values
         lineChartView.leftAxis.axisMaximum = 40
         lineChartView.leftAxis.axisMinimum = 10
         
@@ -32,7 +31,7 @@ struct ChartPresets {
         }
         
         lineChartView.xAxis.labelPosition = .bottom
-        lineChartView.xAxis.labelFont = .boldSystemFont(ofSize: 12) // change based on how many labels
+        lineChartView.xAxis.labelFont = .boldSystemFont(ofSize: 12)
         lineChartView.xAxis.axisLineColor = .darkGreen
         lineChartView.xAxis.axisMaxLabels = 8
         lineChartView.extraRightOffset = 30

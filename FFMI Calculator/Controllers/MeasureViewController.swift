@@ -74,23 +74,19 @@ class MeasureViewController: UIViewController {
         maleButton.backgroundColor = UIColor.darkGreen
         femaleButton.backgroundColor = UIColor.seaGreen
         
-        let buttonArray: [UIButton] = [maleButton, femaleButton, knowFatButton, dontKnowFatButton, imperialButton, metricButton, measureButton, trendsButton, methodologyButton, settingsButton]
-        self.borderButtons(buttonArray)
+        let optionButtonArray: [UIButton] = [maleButton, femaleButton, knowFatButton, dontKnowFatButton, imperialButton, metricButton, measureButton, trendsButton, methodologyButton, settingsButton]
+        K.ChangeBorder.borderOptionButtons(optionButtonArray)
         
-        let actionButtonArray: [UIButton] = [calculateButton, resetButton, saveButton]
-        self.borderButtons2(actionButtonArray)
+        let VCButtonArray: [UIButton] = [calculateButton, resetButton, saveButton]
+        K.ChangeBorder.borderVCButtons(VCButtonArray)
         
         let fieldArray: [SkyFloatingLabelTextField] = [heightFtField, heightInchField, weightField, fatField, neckField, waistField, hipField]
-        
-        for tf in fieldArray {
-            tf.titleLabel.textAlignment = .right
-            tf.textAlignment = .right
-        }
+        K.ChangeBorder.changeTextFields(fieldArray)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
-        if let user = defaults.string(forKey: "Username") {
+        if defaults.string(forKey: "Username") != nil {
             // input something here to put into the settings tab
         } else {
             
@@ -113,20 +109,6 @@ class MeasureViewController: UIViewController {
         }
     }
     
-    func borderButtons(_ buttonArray: [UIButton]) {
-        for button in buttonArray {
-            button.layer.borderWidth = 1.0
-            button.layer.borderColor = UIColor.darkGreen.cgColor
-        }
-    }
-    
-    func borderButtons2(_ buttonArray: [UIButton]) {
-        for button in buttonArray {
-            button.layer.borderWidth = 1.0
-            button.layer.borderColor = UIColor.seaGreen.cgColor
-        }
-    }
-    
     // viewDidLoad, viewWillAppear, viewDidAppear, viewWillDisappear, viewDidDisappear
     // AppDelegate -> iOS lets us know where we are
     // two windows -> two separate scenes - this is what the scene delegate is for
@@ -134,16 +116,8 @@ class MeasureViewController: UIViewController {
     // SceneDelegate -> window coming into foreground, etc
     // sceneDidEnterBackground -> good time to save user's data
     
-    @IBAction func trendsButtonPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: K.Segue.measureTrends, sender: self)
-    }
-    
-    @IBAction func methodologyButtonPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: K.Segue.measureMethodology, sender: self)
-    }
-    
-    @IBAction func settingsButtonPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: K.Segue.measureSettings, sender: self)
+    @IBAction func changeVCButtonPressed(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "measureTo\(sender.currentTitle!)", sender: self)
     }
     
     @IBAction func knownFatPressed(_ sender: UIButton) {
