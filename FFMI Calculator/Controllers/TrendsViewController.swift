@@ -18,9 +18,8 @@ class TrendsViewController: UIViewController {
     let customMarkerView = CustomMarkerView()
     var selectedDP: UserData = UserData()
     var selectedDPInd: Int = 0
-    let xFormatter = XAxisNameFormatter()
     
-    @IBOutlet weak var lineChartView: LineChartView!
+    @IBOutlet weak var lineChartView: CombinedChartView!
     @IBOutlet weak var measureButton: UIButton!
     @IBOutlet weak var methodologyButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
@@ -39,13 +38,16 @@ class TrendsViewController: UIViewController {
         
         userData = realm.objects(UserData.self)
         
-        ChartPresets.lineChartPreset(lineChartView, userData!, xFormatter)
-        
+        ChartPresets.lineChartPreset(lineChartView, userData!)
+//        print(Realm.Configuration.defaultConfiguration.fileURL!)
         CreateChart.setData(userData!, lineChartView)
         
         let VCButtonArray: [UIButton] = [measureButton, methodologyButton, settingsButton]
         K.ChangeBorder.borderVCButtons(VCButtonArray)
-//       print(Realm.Configuration.defaultConfiguration.fileURL!)
+        
+        if userData!.count == 1 {
+            deleteButton.alpha = 1
+        }
     }
     
     
@@ -57,19 +59,30 @@ class TrendsViewController: UIViewController {
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
         
         if deleteButton.alpha == 1 {
+            deleteButton.alpha = 0.5
             lineChartView.highlightValue(nil)
             lineChartView.moveViewToX(0.0)
-            do {
-                try realm.write {
-                    realm.delete(selectedDP)
+            if userData!.count > 1 {
+                do {
+                    try realm.write {
+                        realm.delete(selectedDP)
+                    }
+                } catch {
+                    print("There was an error trying to delete")
                 }
-            } catch {
-                print("There was an error trying to delete")
+            } else if userData!.count == 1 {
+                deleteButton.alpha = 1
+                do {
+                    try realm.write {
+                        realm.delete(userData![0])
+                    }
+                } catch {
+                    print("There was an error trying to delte")
+                }
             }
         }
-        
         chartValueNothingSelected(lineChartView)
-        ChartPresets.lineChartPreset(lineChartView, userData!, xFormatter)
+        ChartPresets.lineChartPreset(lineChartView, userData!)
         CreateChart.setData(userData!, lineChartView)
     }
 }
@@ -82,7 +95,6 @@ extension TrendsViewController: ChartViewDelegate, AxisValueFormatter {
         dateFormatter.dateFormat = "MM/dd"
         return dateFormatter.string(from: Date(timeIntervalSince1970: userData![Int(value)].date))
     }
-    
     
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         
@@ -128,6 +140,10 @@ extension TrendsViewController: ChartViewDelegate, AxisValueFormatter {
     
     func chartValueNothingSelected(_ chartView: ChartViewBase) {
         
-        deleteButton.alpha = 0.5
+        if userData!.count != 1 {
+            deleteButton.alpha = 0.5
+        } else {
+            deleteButton.alpha = 1
+        }
     }
 }

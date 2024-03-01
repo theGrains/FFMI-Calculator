@@ -12,7 +12,7 @@ import RealmSwift
 
 struct ChartPresets {
         
-    static func lineChartPreset(_ lineChartView: LineChartView, _ userData: Results<UserData>, _ xFormatter: XAxisNameFormatter) {
+    static func lineChartPreset(_ lineChartView: CombinedChartView, _ userData: Results<UserData>) {
         
         lineChartView.backgroundColor = UIColor.regularGreen
         lineChartView.rightAxis.enabled = false
@@ -34,6 +34,7 @@ struct ChartPresets {
         lineChartView.xAxis.labelFont = .boldSystemFont(ofSize: 12)
         lineChartView.xAxis.axisLineColor = .darkGreen
         lineChartView.xAxis.axisMaxLabels = 8
+        lineChartView.xAxis.axisMinimum = 0
         lineChartView.extraRightOffset = 30
         
         lineChartView.pinchZoomEnabled = false

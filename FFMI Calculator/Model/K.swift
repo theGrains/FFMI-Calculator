@@ -42,7 +42,7 @@ struct K {
         static func borderOptionButtons(_ buttonArray: [UIButton]) {
             for button in buttonArray {
                 button.layer.borderWidth = 1.0
-                button.layer.borderColor = UIColor.darkGreen.cgColor
+                button.layer.borderColor = UIColor.seaGreen.cgColor
             }
         }
         

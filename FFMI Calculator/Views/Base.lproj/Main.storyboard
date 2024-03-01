@@ -537,11 +537,20 @@
                         <outlet property="settingsButton" destination="U1X-Nx-xfY" id="9gM-if-izq"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="trendsToMeasure" modalPresentationStyle="fullScreen" id="zJh-Jh-Aqq"/>
                         <segue destination="NZy-Od-6hX" kind="presentation" identifier="trendsToMethodology" modalPresentationStyle="fullScreen" id="qDi-Gk-UIh"/>
+                        <segue destination="jpn-AV-rIB" kind="presentation" identifier="selfSegue" modalPresentationStyle="fullScreen" id="Ytg-hu-j6O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f8S-Bv-6SJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="905.58139534883719" y="-706.22317596566529"/>
+        </scene>
+        <!--TrendsViewController-->
+        <scene sceneID="Eyv-kX-UQE">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="TrendsViewController" storyboardName="Main" referencedIdentifier="TrendsViewController" id="jpn-AV-rIB" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="89I-rK-Npm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1526" y="-595"/>
         </scene>
         <!--Methodology View Controller-->
         <scene sceneID="Duc-8w-mwg">
@@ -742,9 +751,9 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="4Nm-RK-qRJ"/>
+        <segue reference="qDi-Gk-UIh"/>
         <segue reference="HJ7-4p-DC2"/>
-        <segue reference="F5X-Pt-wmP"/>
+        <segue reference="zJh-Jh-Aqq"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="ffmiInterpMen" width="272" height="122.5"/>

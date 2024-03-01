@@ -56,9 +56,6 @@ class MeasureViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        print(Realm.Configuration.defaultConfiguration.fileURL!)
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,11 +71,11 @@ class MeasureViewController: UIViewController {
         maleButton.backgroundColor = UIColor.darkGreen
         femaleButton.backgroundColor = UIColor.seaGreen
         
-        let optionButtonArray: [UIButton] = [maleButton, femaleButton, knowFatButton, dontKnowFatButton, imperialButton, metricButton, measureButton, trendsButton, methodologyButton, settingsButton]
-        K.ChangeBorder.borderOptionButtons(optionButtonArray)
-        
-        let VCButtonArray: [UIButton] = [calculateButton, resetButton, saveButton]
+        let VCButtonArray: [UIButton] = [maleButton, femaleButton, knowFatButton, dontKnowFatButton, imperialButton, metricButton, measureButton, trendsButton, methodologyButton, settingsButton]
         K.ChangeBorder.borderVCButtons(VCButtonArray)
+        
+        let optionButtonArray: [UIButton] = [calculateButton, resetButton, saveButton]
+        K.ChangeBorder.borderOptionButtons(optionButtonArray)
         
         let fieldArray: [SkyFloatingLabelTextField] = [heightFtField, heightInchField, weightField, fatField, neckField, waistField, hipField]
         K.ChangeBorder.changeTextFields(fieldArray)
@@ -87,7 +84,7 @@ class MeasureViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         
         if defaults.string(forKey: "Username") != nil {
-            // input something here to put into the settings tab
+            // nothing
         } else {
             
             var textField = UITextField()
@@ -223,21 +220,7 @@ class MeasureViewController: UIViewController {
         
         if enteredData == true {
             
-            let userData = UserData()
-            
-            userData.FFMI = ffmiLabel.text
-            userData.AFFMI = affmiLabel.text
-            userData.fat = fatLabel.text
-            userData.name = defaults.string(forKey: "Username")!
-            
-            userData.heightFt = heightFtField.text
-            userData.heightInch = heightInchField.text
-            userData.weight = weightField.text
-            userData.neck = neckField.text
-            userData.waist = waistField.text
-            userData.hip = hipField.text
-            
-            userData.date = Date().timeIntervalSince1970
+            let userData = UserData(FFMI: ffmiLabel.text, AFFMI: affmiLabel.text, fat: fatLabel.text, name: defaults.string(forKey: "Username")!, neck: neckField.text, waist: waistField.text, hip: hipField.text, heightFt: heightFtField.text, heightInch: heightInchField.text, weight: weightField.text, unitImperial: unitsImperial, date: Date().timeIntervalSince1970)
             
             do {
                 try realm.write {
