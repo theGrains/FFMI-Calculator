@@ -109,20 +109,27 @@ extension TrendsViewController: ChartViewDelegate, AxisValueFormatter {
         
         dateFormatter.dateFormat = "MM/dd" // change possibly depending on imperial or metric
         customMarkerView.dateLabel.text = dateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(userData![Int(entry.x)].date)))
-        customMarkerView.currentDataLabel.text = userData![Int(entry.x)].FFMI
-        let AFFMIvalue = userData![Int(entry.x)].AFFMI!.index(userData![Int(entry.x)].AFFMI!.endIndex, offsetBy: -5)..<userData![Int(entry.x)].AFFMI!.endIndex
-        customMarkerView.affmiLabel.text = "AFFMI \(userData![Int(entry.x)].AFFMI![AFFMIvalue])"
-        customMarkerView.fatLabel.text = userData![Int(entry.x)].fat
-        customMarkerView.weightLabel.text = "Weight = \(userData![Int(entry.x)].weight ?? "") lbs"
-        customMarkerView.neckLabe.text = userData![Int(entry.x)].neck
-        customMarkerView.waistLabel.text = userData![Int(entry.x)].waist
-        customMarkerView.hipLabel.text = userData![Int(entry.x)].hip
+        customMarkerView.currentDataLabel.text = "FFMI = \(String(format: "%.2f", userData![Int(entry.x)].FFMI))"
+        customMarkerView.affmiLabel.text = "AFFMI = \(String(format: "%.2f", userData![Int(entry.x)].AFFMI))"
+        customMarkerView.fatLabel.text = "Fat % = \(String(format: "%.2f", userData![Int(entry.x)].fat))%"
+        customMarkerView.weightLabel.text = "Weight = \(userData![Int(entry.x)].weight) lbs"
         
         var markerHeight = 0
-        if userData![Int(entry.x)].neck! == "" {
+        if userData![Int(entry.x)].neck == 0.0 {
             markerHeight = 90
+            customMarkerView.neckLabe.text = ""
+            customMarkerView.waistLabel.text = ""
+            customMarkerView.hipLabel.text = ""
+        } else if userData![Int(entry.x)].hip == 0.0 {
+            markerHeight = 122
+            customMarkerView.neckLabe.text = "Neck = \(String(userData![Int(entry.x)].neck)) inch"
+            customMarkerView.waistLabel.text = "Waist = \(String(userData![Int(entry.x)].waist)) inch"
+            customMarkerView.hipLabel.text = ""
         } else {
             markerHeight = 138
+            customMarkerView.neckLabe.text = "Neck = \(String(userData![Int(entry.x)].neck)) inch"
+            customMarkerView.waistLabel.text = "Waist = \(String(userData![Int(entry.x)].waist)) inch"
+            customMarkerView.hipLabel.text = "Hip = \(String(userData![Int(entry.x)].hip)) inch"
         }
         
         let contentView = customMarkerView.getMarker()

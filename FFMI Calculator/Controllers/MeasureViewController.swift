@@ -20,6 +20,10 @@ class MeasureViewController: UIViewController {
     var enteredData: Bool = false
     let defaults = UserDefaults.standard
     
+    var currentFFMI: Float?
+    var currentAFFMI: Float?
+    var currentFat: Float?
+    
     @IBOutlet weak var heightFtField: SkyFloatingLabelTextField!
     @IBOutlet weak var heightInchField: SkyFloatingLabelTextField!
     @IBOutlet weak var weightField: SkyFloatingLabelTextField!
@@ -220,7 +224,7 @@ class MeasureViewController: UIViewController {
         
         if enteredData == true {
             
-            let userData = UserData(FFMI: ffmiLabel.text, AFFMI: affmiLabel.text, fat: fatLabel.text, name: defaults.string(forKey: "Username")!, neck: neckField.text, waist: waistField.text, hip: hipField.text, heightFt: heightFtField.text, heightInch: heightInchField.text, weight: weightField.text, unitImperial: unitsImperial, date: Date().timeIntervalSince1970)
+            let userData = UserData(FFMI: currentFFMI!, AFFMI: currentAFFMI!, fat: currentFat!, name: defaults.string(forKey: "Username")!, neck: Float(neckField.text!) ?? 0.0, waist: Float(waistField.text!) ?? 0.0, hip: Float(hipField.text!) ?? 0.0, heightFt: Float(heightFtField.text!) ?? 0.0, heightInch: Float(heightInchField.text!) ?? 0.0, weight: Float(weightField.text!) ?? 0.0, unitImperial: unitsImperial, date: Date().timeIntervalSince1970)
             
             do {
                 try realm.write {
@@ -249,6 +253,9 @@ class MeasureViewController: UIViewController {
                     
                     let data = calculatorModel.convertMetricToImperialFFMI(heightCm, weightKg)
                     let FFMIS = calculatorModel.calculateFFMI(data[0], data[1], data[2], fat)
+                    currentFFMI = FFMIS[0]
+                    currentAFFMI = FFMIS[1]
+                    currentFat = fat
                     let FFMI = FFMIS[0]
                     let AFFMI = FFMIS[1]
                     
@@ -266,6 +273,9 @@ class MeasureViewController: UIViewController {
                 if let weight = Float(weightField.text!), let heightFt = Float(heightFtField.text!), let heightInch = Float(heightInchField.text!), let fat = Float(fatField.text!) {
                     
                     let FFMIS = calculatorModel.calculateFFMI(heightFt, heightInch, weight, fat)
+                    currentFFMI = FFMIS[0]
+                    currentAFFMI = FFMIS[1]
+                    currentFat = fat
                     let FFMI = FFMIS[0]
                     let AFFMI = FFMIS[1]
                     
@@ -289,6 +299,9 @@ class MeasureViewController: UIViewController {
                     let data = calculatorModel.convertMetricToImperialFFMI(heightCm, weightKg)
                     let fat = calculatorModel.calculateBodyFat(orientationMale, imperial[0], imperial[1], imperial[2], data[0], data[1])
                     let FFMIS = calculatorModel.calculateFFMI(data[0], data[1], data[2], fat)
+                    currentFFMI = FFMIS[0]
+                    currentAFFMI = FFMIS[1]
+                    currentFat = fat
                     let FFMI = FFMIS[0]
                     let AFFMI = FFMIS[1]
                     
@@ -308,6 +321,9 @@ class MeasureViewController: UIViewController {
                     let hip = Float(hipField.text!) ?? nil
                     let fat = calculatorModel.calculateBodyFat(orientationMale, waist, neck, hip, heightFt, heightInch)
                     let FFMIS = calculatorModel.calculateFFMI(heightFt, heightInch, weight, fat)
+                    currentFFMI = FFMIS[0]
+                    currentAFFMI = FFMIS[1]
+                    currentFat = fat
                     let FFMI = FFMIS[0]
                     let AFFMI = FFMIS[1]
                     

@@ -17,8 +17,7 @@ class CreateChart {
         var data: [ChartDataEntry] = []
         var count = 0
         for dp in userData {
-            let FFMIvalue = dp.FFMI!.index(dp.FFMI!.endIndex, offsetBy: -5)..<dp.FFMI!.endIndex
-            data.append(ChartDataEntry(x: Double(count), y: Double(dp.FFMI![FFMIvalue])!))
+            data.append(ChartDataEntry(x: Double(count), y: Double(dp.FFMI)))
             count += 1
         }
         count = 0
@@ -32,7 +31,7 @@ class CreateChart {
             lineChartView.data = nil
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MM/dd"
-            lineChartView.noDataText = "FFMI = \(data[0].y), \(dateFormatter.string(from: Date(timeIntervalSince1970: userData[0].date)))"
+            lineChartView.noDataText = "FFMI = \(String(format: "%.2f", data[0].y)), \(dateFormatter.string(from: Date(timeIntervalSince1970: userData[0].date)))"
         } else if userData.count == 0 {
             lineChartView.data = nil
             lineChartView.noDataText = "There is no data to display"
