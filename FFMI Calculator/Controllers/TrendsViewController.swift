@@ -26,6 +26,12 @@ class TrendsViewController: UIViewController {
     
     @IBOutlet weak var deleteButton: UIButton!
     
+    @IBOutlet weak var ffmiPlotButton: UIButton!
+    @IBOutlet weak var affmiPlotButton: UIButton!
+    @IBOutlet weak var fatPlotButton: UIButton!
+    @IBOutlet weak var weightPlotButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,16 +44,19 @@ class TrendsViewController: UIViewController {
         
         userData = realm.objects(UserData.self)
         
-        ChartPresets.lineChartPreset(lineChartView, userData!)
-//        print(Realm.Configuration.defaultConfiguration.fileURL!)
-        CreateChart.setData(userData!, lineChartView)
+        ChartPresets.lineChartPreset(lineChartView, userData!) // make a parameter here for what is being graphed
+        CreateChart.setData(userData!, lineChartView) // make a parameter here for what is being graphed
         
         let VCButtonArray: [UIButton] = [measureButton, methodologyButton, settingsButton]
         K.ChangeBorder.borderVCButtons(VCButtonArray)
         
+        let plotButtonArray: [UIButton] = [ffmiPlotButton, affmiPlotButton, fatPlotButton, weightPlotButton]
+        K.ChangeBorder.borderVCButtons(plotButtonArray)
+        
         if userData!.count == 1 {
             deleteButton.alpha = 1
         }
+        //        print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
     
     
@@ -99,21 +108,33 @@ extension TrendsViewController: ChartViewDelegate, AxisValueFormatter {
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         
         // need to refactor of all this
-        // consider male/female
         // consider metric/imperial
-        // lots of things to consider here
         
         deleteButton.alpha = 1
         selectedDP = userData![Int(entry.x)]
         selectedDPInd = Int(entry.x)
+        
+        var weightUnit: String
+        var circumUnit: String
+//        var dividingFactorWeight: Float
+//        var dividingFactorCircum: Float
+        
+        if selectedDP.unitImperial == true {
+            weightUnit = "lbs"
+            circumUnit = "inch"
+            customMarkerView.weightLabel.text = "Weight = \(String(format: "%.1f", userData![Int(entry.x)].weight)) \(weightUnit)"
+        } else {
+            weightUnit = "kg"
+            circumUnit = "cm"
+            customMarkerView.weightLabel.text = "Weight = \(String(format: "%.2f", userData![Int(entry.x)].weight)) \(weightUnit)"
+        }
+        
         
         dateFormatter.dateFormat = "MM/dd" // change possibly depending on imperial or metric
         customMarkerView.dateLabel.text = dateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(userData![Int(entry.x)].date)))
         customMarkerView.currentDataLabel.text = "FFMI = \(String(format: "%.2f", userData![Int(entry.x)].FFMI))"
         customMarkerView.affmiLabel.text = "AFFMI = \(String(format: "%.2f", userData![Int(entry.x)].AFFMI))"
         customMarkerView.fatLabel.text = "Fat % = \(String(format: "%.2f", userData![Int(entry.x)].fat))%"
-        customMarkerView.weightLabel.text = "Weight = \(userData![Int(entry.x)].weight) lbs"
-        
         var markerHeight = 0
         if userData![Int(entry.x)].neck == 0.0 {
             markerHeight = 90
@@ -122,14 +143,14 @@ extension TrendsViewController: ChartViewDelegate, AxisValueFormatter {
             customMarkerView.hipLabel.text = ""
         } else if userData![Int(entry.x)].hip == 0.0 {
             markerHeight = 122
-            customMarkerView.neckLabe.text = "Neck = \(String(userData![Int(entry.x)].neck)) inch"
-            customMarkerView.waistLabel.text = "Waist = \(String(userData![Int(entry.x)].waist)) inch"
+            customMarkerView.neckLabe.text = "Neck = \(String(userData![Int(entry.x)].neck)) \(circumUnit)"
+            customMarkerView.waistLabel.text = "Waist = \(String(userData![Int(entry.x)].waist)) \(circumUnit)"
             customMarkerView.hipLabel.text = ""
         } else {
             markerHeight = 138
-            customMarkerView.neckLabe.text = "Neck = \(String(userData![Int(entry.x)].neck)) inch"
-            customMarkerView.waistLabel.text = "Waist = \(String(userData![Int(entry.x)].waist)) inch"
-            customMarkerView.hipLabel.text = "Hip = \(String(userData![Int(entry.x)].hip)) inch"
+            customMarkerView.neckLabe.text = "Neck = \(String(userData![Int(entry.x)].neck)) \(circumUnit)"
+            customMarkerView.waistLabel.text = "Waist = \(String(userData![Int(entry.x)].waist)) \(circumUnit)"
+            customMarkerView.hipLabel.text = "Hip = \(String(userData![Int(entry.x)].hip)) \(circumUnit)"
         }
         
         let contentView = customMarkerView.getMarker()

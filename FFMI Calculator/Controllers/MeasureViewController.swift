@@ -222,7 +222,15 @@ class MeasureViewController: UIViewController {
         
         animateButton(sender)
         
-        if enteredData == true {
+        let realData: Bool
+        
+        if currentFat! >= 0 && currentFat! <= 40 && currentFFMI! >= 0 {
+            realData = true
+        } else {
+            realData = false
+        }
+        
+        if enteredData == true && realData == true {
             
             let userData = UserData(FFMI: currentFFMI!, AFFMI: currentAFFMI!, fat: currentFat!, name: defaults.string(forKey: "Username")!, neck: Float(neckField.text!) ?? 0.0, waist: Float(waistField.text!) ?? 0.0, hip: Float(hipField.text!) ?? 0.0, heightFt: Float(heightFtField.text!) ?? 0.0, heightInch: Float(heightInchField.text!) ?? 0.0, weight: Float(weightField.text!) ?? 0.0, unitImperial: unitsImperial, date: Date().timeIntervalSince1970)
             
@@ -233,8 +241,13 @@ class MeasureViewController: UIViewController {
             } catch {
                 print("Error saving data, \(error)")
             }
-        } else {
+        } else if enteredData == false {
             let alert = UIAlertController(title: "No data to save", message: "Please enter data, click calculate, then click save", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default))
+            present(alert, animated: true, completion: nil)
+            calculatorModel.fillInData(ffmiLabel, affmiLabel, fatLabel)
+        } else if realData == false {
+            let alert = UIAlertController(title: "Data may have been entered incorrectly", message: "Please enter data, click calculate, then click save", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default))
             present(alert, animated: true, completion: nil)
             calculatorModel.fillInData(ffmiLabel, affmiLabel, fatLabel)
