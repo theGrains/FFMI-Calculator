@@ -18,6 +18,7 @@ class TrendsViewController: UIViewController {
     let customMarkerView = CustomMarkerView()
     var selectedDP: UserData = UserData()
     var selectedDPInd: Int = 0
+    var dataToPlot: String = "FFMI"
     
     @IBOutlet weak var lineChartView: CombinedChartView!
     @IBOutlet weak var measureButton: UIButton!
@@ -31,6 +32,7 @@ class TrendsViewController: UIViewController {
     @IBOutlet weak var fatPlotButton: UIButton!
     @IBOutlet weak var weightPlotButton: UIButton!
     
+    @IBOutlet weak var trendsLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,8 +46,8 @@ class TrendsViewController: UIViewController {
         
         userData = realm.objects(UserData.self)
         
-        ChartPresets.lineChartPreset(lineChartView, userData!) // make a parameter here for what is being graphed
-        CreateChart.setData(userData!, lineChartView) // make a parameter here for what is being graphed
+        ChartPresets.lineChartPreset(userData!, lineChartView, dataToPlot) // make a parameter here for what is being graphed
+        CreateChart.setData(userData!, lineChartView, dataToPlot) // make a parameter here for what is being graphed
         
         let VCButtonArray: [UIButton] = [measureButton, methodologyButton, settingsButton]
         K.ChangeBorder.borderVCButtons(VCButtonArray)
@@ -91,8 +93,24 @@ class TrendsViewController: UIViewController {
             }
         }
         chartValueNothingSelected(lineChartView)
-        ChartPresets.lineChartPreset(lineChartView, userData!)
-        CreateChart.setData(userData!, lineChartView)
+        ChartPresets.lineChartPreset(userData!, lineChartView, dataToPlot)
+        CreateChart.setData(userData!, lineChartView, dataToPlot)
+    }
+    
+    @IBAction func dataButtonPressed(_ sender: UIButton) {
+        
+        dataToPlot = sender.currentTitle!
+        trendsLabel.text = "\(dataToPlot) Trends"
+        chartValueNothingSelected(lineChartView)
+        ChartPresets.lineChartPreset(userData!, lineChartView, dataToPlot)
+        CreateChart.setData(userData!, lineChartView, dataToPlot)
+        sender.backgroundColor = UIColor.darkGreen
+        let plotButtonArray: [UIButton] = [ffmiPlotButton, affmiPlotButton, fatPlotButton, weightPlotButton]
+        for button in plotButtonArray {
+            if sender.currentTitle != button.currentTitle {
+                button.backgroundColor = UIColor.seaGreen
+            }
+        }
     }
 }
 

@@ -12,7 +12,7 @@ import RealmSwift
 
 struct ChartPresets {
         
-    static func lineChartPreset(_ lineChartView: CombinedChartView, _ userData: Results<UserData>) {
+    static func lineChartPreset(_ userData: Results<UserData>, _ lineChartView: CombinedChartView, _ plotType: String) {
         
         lineChartView.backgroundColor = UIColor.regularGreen
         lineChartView.rightAxis.enabled = false
@@ -21,8 +21,25 @@ struct ChartPresets {
         lineChartView.leftAxis.labelTextColor = .darkBlue
         lineChartView.leftAxis.axisLineColor = .darkGreen
         lineChartView.leftAxis.labelPosition = .outsideChart
-        lineChartView.leftAxis.axisMaximum = 40
-        lineChartView.leftAxis.axisMinimum = 10
+        
+        switch plotType { // may want to change this by checking maximum and minimum values
+        case "FFMI":
+            lineChartView.leftAxis.axisMaximum = 40
+            lineChartView.leftAxis.axisMinimum = 10
+        case "AFFMI":
+            lineChartView.leftAxis.axisMaximum = 40
+            lineChartView.leftAxis.axisMinimum = 10
+        case "Fat %":
+            lineChartView.leftAxis.axisMaximum = 35
+            lineChartView.leftAxis.axisMinimum = 0
+        case "Weight":
+            lineChartView.leftAxis.axisMaximum = 300
+            lineChartView.leftAxis.axisMinimum = 50
+        default:
+            lineChartView.leftAxis.axisMaximum = 40
+            lineChartView.leftAxis.axisMinimum = 10
+        }
+       
         
         if userData.count >= 8 {
             lineChartView.xAxis.setLabelCount(8, force: true)
@@ -47,11 +64,11 @@ struct ChartPresets {
         set.drawHorizontalHighlightIndicatorEnabled = false
         set.valueFont = UIFont(name: "Verdana", size: 10)!
         set.setCircleColor(UIColor.seaGreen)
-        set.circleHoleColor = .white
+        set.circleHoleColor = UIColor.white
         set.valueTextColor = UIColor.seaGreen
         set.mode = .cubicBezier
         set.lineWidth = 3
-        set.setColor(.seaGreen)
+        set.setColor(UIColor.seaGreen)
         set.highlightLineWidth = 1
         set.highlightColor = UIColor.seaGreen
         set.highlightLineDashLengths = [10.0]

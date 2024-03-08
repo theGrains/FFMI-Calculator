@@ -12,16 +12,37 @@ import RealmSwift
 
 class CreateChart {
     
-    static func setData(_ userData: Results<UserData>, _ lineChartView: CombinedChartView) {
+    static func setData(_ userData: Results<UserData>, _ lineChartView: CombinedChartView, _ plotType: String) {
         
         var data: [ChartDataEntry] = []
+        let title: String = plotType
         var count = 0
         for dp in userData {
-            data.append(ChartDataEntry(x: Double(count), y: Double(dp.FFMI)))
+            
+            switch title {
+            case "FFMI":
+                data.append(ChartDataEntry(x: Double(count), y: Double(dp.FFMI)))
+            case "AFFMI":
+                data.append(ChartDataEntry(x: Double(count), y: Double(dp.AFFMI)))
+            case "Fat %":
+                data.append(ChartDataEntry(x: Double(count), y: Double(dp.fat)))
+            case "Weight":
+                if dp.unitImperial == true {
+                    data.append(ChartDataEntry(x: Double(count), y: Double(dp.weight)))
+                } else {
+                    data.append(ChartDataEntry(x: Double(count), y: Double(dp.weight * 2.20462)))
+                }
+            default:
+                data.append(ChartDataEntry(x: Double(count), y: Double(dp.FFMI)))
+            }
             count += 1
         }
         count = 0
-        let set = LineChartDataSet(entries: data, label: "FFMI")
+        
+        var set = LineChartDataSet(entries: data, label: title)
+        if title == "Weight" {
+            set = LineChartDataSet(entries: data, label: "Weight (lbs)")
+        }
         
         ChartPresets.lineChartSetPreset(set)
         if userData.count > 1 {
@@ -31,7 +52,7 @@ class CreateChart {
             lineChartView.data = nil
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MM/dd"
-            lineChartView.noDataText = "FFMI = \(String(format: "%.2f", data[0].y)), \(dateFormatter.string(from: Date(timeIntervalSince1970: userData[0].date)))"
+            lineChartView.noDataText = "\(title) = \(String(format: "%.2f", data[0].y)), \(dateFormatter.string(from: Date(timeIntervalSince1970: userData[0].date)))"
         } else if userData.count == 0 {
             lineChartView.data = nil
             lineChartView.noDataText = "There is no data to display"
