@@ -10,6 +10,7 @@ import DGCharts
 
 class CustomMarkerView: MarkerView {
 
+    
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var currentDataLabel: UILabel!
@@ -19,6 +20,8 @@ class CustomMarkerView: MarkerView {
     @IBOutlet weak var neckLabe: UILabel!
     @IBOutlet weak var waistLabel: UILabel!
     @IBOutlet weak var hipLabel: UILabel!
+    
+    @IBOutlet var chartMarkerView: MarkerView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -43,10 +46,6 @@ class CustomMarkerView: MarkerView {
     
     func getMarker() -> UIView {
         return contentView
-    }
-    
-    @IBAction func moreInfoButtonPressed(_ sender: UIButton) {
-        print("hello")
     }
     
 }

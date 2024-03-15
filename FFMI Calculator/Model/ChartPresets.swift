@@ -12,7 +12,7 @@ import RealmSwift
 
 struct ChartPresets {
         
-    static func lineChartPreset(_ userData: Results<UserData>, _ lineChartView: CombinedChartView, _ plotType: String) {
+    static func lineChartPreset(_ userData: Results<UserData>, _ lineChartView: LineChartView, _ plotType: String) {
         
         lineChartView.backgroundColor = UIColor.regularGreen
         lineChartView.rightAxis.enabled = false

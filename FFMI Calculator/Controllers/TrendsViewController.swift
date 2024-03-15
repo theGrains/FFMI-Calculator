@@ -20,7 +20,7 @@ class TrendsViewController: UIViewController {
     var selectedDPInd: Int = 0
     var dataToPlot: String = "FFMI"
     
-    @IBOutlet weak var lineChartView: CombinedChartView!
+    @IBOutlet weak var lineChartView: LineChartView!
     @IBOutlet weak var measureButton: UIButton!
     @IBOutlet weak var methodologyButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
@@ -34,6 +34,7 @@ class TrendsViewController: UIViewController {
     
     @IBOutlet weak var trendsLabel: UILabel!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,8 +47,8 @@ class TrendsViewController: UIViewController {
         
         userData = realm.objects(UserData.self)
         
-        ChartPresets.lineChartPreset(userData!, lineChartView, dataToPlot) // make a parameter here for what is being graphed
-        CreateChart.setData(userData!, lineChartView, dataToPlot) // make a parameter here for what is being graphed
+        ChartPresets.lineChartPreset(userData!, lineChartView, dataToPlot)
+        CreateChart.setData(userData!, lineChartView, dataToPlot)
         
         let VCButtonArray: [UIButton] = [measureButton, methodologyButton, settingsButton]
         K.ChangeBorder.borderVCButtons(VCButtonArray)
@@ -92,6 +93,7 @@ class TrendsViewController: UIViewController {
                 }
             }
         }
+        lineChartView.highlightValue(nil, callDelegate: false)
         chartValueNothingSelected(lineChartView)
         ChartPresets.lineChartPreset(userData!, lineChartView, dataToPlot)
         CreateChart.setData(userData!, lineChartView, dataToPlot)
@@ -101,6 +103,7 @@ class TrendsViewController: UIViewController {
         
         dataToPlot = sender.currentTitle!
         trendsLabel.text = "\(dataToPlot) Trends"
+        lineChartView.highlightValue(nil, callDelegate: false)
         chartValueNothingSelected(lineChartView)
         ChartPresets.lineChartPreset(userData!, lineChartView, dataToPlot)
         CreateChart.setData(userData!, lineChartView, dataToPlot)
@@ -126,7 +129,8 @@ extension TrendsViewController: ChartViewDelegate, AxisValueFormatter {
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         
         // need to refactor of all this
-        // consider metric/imperial
+        let contentView = customMarkerView.getMarker()
+        let yPoint = highlight.yPx
         
         deleteButton.alpha = 1
         selectedDP = userData![Int(entry.x)]
@@ -134,8 +138,6 @@ extension TrendsViewController: ChartViewDelegate, AxisValueFormatter {
         
         var weightUnit: String
         var circumUnit: String
-//        var dividingFactorWeight: Float
-//        var dividingFactorCircum: Float
         
         if selectedDP.unitImperial == true {
             weightUnit = "lbs"
@@ -153,6 +155,7 @@ extension TrendsViewController: ChartViewDelegate, AxisValueFormatter {
         customMarkerView.currentDataLabel.text = "FFMI = \(String(format: "%.2f", userData![Int(entry.x)].FFMI))"
         customMarkerView.affmiLabel.text = "AFFMI = \(String(format: "%.2f", userData![Int(entry.x)].AFFMI))"
         customMarkerView.fatLabel.text = "Fat % = \(String(format: "%.2f", userData![Int(entry.x)].fat))%"
+        
         var markerHeight = 0
         if userData![Int(entry.x)].neck == 0.0 {
             markerHeight = 90
@@ -171,15 +174,12 @@ extension TrendsViewController: ChartViewDelegate, AxisValueFormatter {
             customMarkerView.hipLabel.text = "Hip = \(String(userData![Int(entry.x)].hip)) \(circumUnit)"
         }
         
-        let contentView = customMarkerView.getMarker()
-        self.view.bringSubviewToFront(contentView)
-        
         if Int(entry.x) == 0 {
-            customMarkerView.changeFrame(CGRect(x: 0, y: -240, width: 93, height: markerHeight))
+            contentView.frame = (CGRect(x: 0, y: Int(-yPoint), width: 93, height: markerHeight))
         } else if Int(entry.x) == userData!.count-1 {
-            customMarkerView.changeFrame(CGRect(x: -93, y: -240, width: 93, height: markerHeight))
+            contentView.frame = (CGRect(x: -93, y: Int(-yPoint), width: 93, height: markerHeight))
         } else {
-            customMarkerView.changeFrame(CGRect(x: -46, y: -240, width: 93, height: markerHeight))
+            contentView.frame = (CGRect(x: -46, y: Int(-yPoint), width: 93, height: markerHeight))
         }
         
     }

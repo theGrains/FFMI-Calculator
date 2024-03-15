@@ -12,7 +12,7 @@ import RealmSwift
 
 class CreateChart {
     
-    static func setData(_ userData: Results<UserData>, _ lineChartView: CombinedChartView, _ plotType: String) {
+    static func setData(_ userData: Results<UserData>, _ lineChartView: LineChartView, _ plotType: String) {
         
         var data: [ChartDataEntry] = []
         let title: String = plotType
