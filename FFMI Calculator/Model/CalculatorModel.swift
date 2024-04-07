@@ -30,7 +30,7 @@ struct CalculatorModel {
     
     func convertMetricToImperialFat(_ orientationMale: Bool, _ waist: Float, _ neck: Float, _ hip: Float?) -> [Float] {
         
-        var hipInch = hip!
+        var hipInch = hip ?? 0
         let waistInch = waist * 0.393701
         let neckInch = neck * 0.393701
         if orientationMale == false {
