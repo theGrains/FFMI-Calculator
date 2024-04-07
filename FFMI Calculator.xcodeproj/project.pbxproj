@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		2300BBC92B7E94EC00C3148A /* SkyFloatingLabelTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 2300BBC82B7E94EC00C3148A /* SkyFloatingLabelTextField */; };
+		230BBD8B2BC30F9700091195 /* UsernameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BBD892BC30F9700091195 /* UsernameCell.swift */; };
+		230BBD8C2BC30F9700091195 /* UsernameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230BBD8A2BC30F9700091195 /* UsernameCell.xib */; };
 		23111BE92B854B2E00BA1848 /* ChartPresets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23111BE82B854B2E00BA1848 /* ChartPresets.swift */; };
 		23111BF82B855A0700BA1848 /* CustomMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23111BF62B855A0700BA1848 /* CustomMarkerView.swift */; };
 		23111BF92B855A0700BA1848 /* CustomMarkerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23111BF72B855A0700BA1848 /* CustomMarkerView.xib */; };
 		23111BFB2B857E1100BA1848 /* CreateChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23111BFA2B857E1100BA1848 /* CreateChart.swift */; };
-		232D58E82B7ADB1300E690B0 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 232D58E72B7ADB1300E690B0 /* DGCharts */; };
-		232D58EA2B7ADB1300E690B0 /* DGChartsDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 232D58E92B7ADB1300E690B0 /* DGChartsDynamic */; };
+		2335C9682BB3CB0600AB3C76 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 2335C9672BB3CB0600AB3C76 /* DGCharts */; settings = {ATTRIBUTES = (Required, ); }; };
 		235415DA2B75C6B9006330B0 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 235415D92B75C6B8006330B0 /* IQKeyboardManagerSwift */; };
 		235CEC5F2B6F22F300F8353E /* TrendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235CEC5E2B6F22F300F8353E /* TrendsViewController.swift */; };
 		235CEC612B6F233800F8353E /* MethodologyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235CEC602B6F233800F8353E /* MethodologyViewController.swift */; };
@@ -24,14 +25,16 @@
 		235DC8C02B6DC1DA00D5AF4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 235DC8BE2B6DC1DA00D5AF4F /* Main.storyboard */; };
 		235DC8C22B6DC1DB00D5AF4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 235DC8C12B6DC1DB00D5AF4F /* Assets.xcassets */; };
 		235DC8C52B6DC1DB00D5AF4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 235DC8C32B6DC1DB00D5AF4F /* LaunchScreen.storyboard */; };
-		237DE6B72B8024CB0054B64A /* TinyConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = 237DE6B62B8024CB0054B64A /* TinyConstraints */; };
 		2384547B2B7859EC00F86F49 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 2384547A2B7859EC00F86F49 /* Realm */; };
 		2384547D2B7859EC00F86F49 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2384547C2B7859EC00F86F49 /* RealmSwift */; };
 		2384547F2B785ACA00F86F49 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2384547E2B785ACA00F86F49 /* UserData.swift */; };
+		23AFE2142BB3AA560022AE2C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AFE2132BB3AA560022AE2C /* SettingsViewController.swift */; };
 		23EBCA512B716E8F00E74F8E /* CalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EBCA502B716E8F00E74F8E /* CalculatorModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		230BBD892BC30F9700091195 /* UsernameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameCell.swift; sourceTree = "<group>"; };
+		230BBD8A2BC30F9700091195 /* UsernameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsernameCell.xib; sourceTree = "<group>"; };
 		23111BE82B854B2E00BA1848 /* ChartPresets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartPresets.swift; sourceTree = "<group>"; };
 		23111BF62B855A0700BA1848 /* CustomMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMarkerView.swift; sourceTree = "<group>"; };
 		23111BF72B855A0700BA1848 /* CustomMarkerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomMarkerView.xib; sourceTree = "<group>"; };
@@ -48,6 +51,7 @@
 		235DC8C42B6DC1DB00D5AF4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		235DC8C62B6DC1DB00D5AF4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2384547E2B785ACA00F86F49 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		23AFE2132BB3AA560022AE2C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		23EBCA502B716E8F00E74F8E /* CalculatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,11 +60,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				237DE6B72B8024CB0054B64A /* TinyConstraints in Frameworks */,
-				232D58E82B7ADB1300E690B0 /* DGCharts in Frameworks */,
 				2384547D2B7859EC00F86F49 /* RealmSwift in Frameworks */,
 				2384547B2B7859EC00F86F49 /* Realm in Frameworks */,
-				232D58EA2B7ADB1300E690B0 /* DGChartsDynamic in Frameworks */,
+				2335C9682BB3CB0600AB3C76 /* DGCharts in Frameworks */,
 				235415DA2B75C6B9006330B0 /* IQKeyboardManagerSwift in Frameworks */,
 				2300BBC92B7E94EC00C3148A /* SkyFloatingLabelTextField in Frameworks */,
 			);
@@ -77,6 +79,7 @@
 				2384547E2B785ACA00F86F49 /* UserData.swift */,
 				23111BE82B854B2E00BA1848 /* ChartPresets.swift */,
 				23111BFA2B857E1100BA1848 /* CreateChart.swift */,
+				230BBD892BC30F9700091195 /* UsernameCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -118,6 +121,7 @@
 				235DC8BC2B6DC1DA00D5AF4F /* MeasureViewController.swift */,
 				235CEC5E2B6F22F300F8353E /* TrendsViewController.swift */,
 				235CEC602B6F233800F8353E /* MethodologyViewController.swift */,
+				23AFE2132BB3AA560022AE2C /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -128,6 +132,7 @@
 				235DC8BE2B6DC1DA00D5AF4F /* Main.storyboard */,
 				23111BF62B855A0700BA1848 /* CustomMarkerView.swift */,
 				23111BF72B855A0700BA1848 /* CustomMarkerView.xib */,
+				230BBD8A2BC30F9700091195 /* UsernameCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -152,10 +157,8 @@
 				235415D92B75C6B8006330B0 /* IQKeyboardManagerSwift */,
 				2384547A2B7859EC00F86F49 /* Realm */,
 				2384547C2B7859EC00F86F49 /* RealmSwift */,
-				232D58E72B7ADB1300E690B0 /* DGCharts */,
-				232D58E92B7ADB1300E690B0 /* DGChartsDynamic */,
 				2300BBC82B7E94EC00C3148A /* SkyFloatingLabelTextField */,
-				237DE6B62B8024CB0054B64A /* TinyConstraints */,
+				2335C9672BB3CB0600AB3C76 /* DGCharts */,
 			);
 			productName = "FFMI Calculator";
 			productReference = 235DC8B52B6DC1DA00D5AF4F /* FFMI Calculator.app */;
@@ -188,9 +191,8 @@
 			packageReferences = (
 				235415D82B75C6B8006330B0 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				238454792B7859EC00F86F49 /* XCRemoteSwiftPackageReference "realm-swift" */,
-				232D58E62B7ADB1300E690B0 /* XCRemoteSwiftPackageReference "Charts" */,
 				2300BBC72B7E94EB00C3148A /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */,
-				237DE6B52B8024CB0054B64A /* XCRemoteSwiftPackageReference "TinyConstraints" */,
+				2335C9662BB3CB0600AB3C76 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 235DC8B62B6DC1DA00D5AF4F /* Products */;
 			projectDirPath = "";
@@ -209,6 +211,7 @@
 				235DC8C52B6DC1DB00D5AF4F /* LaunchScreen.storyboard in Resources */,
 				23111BF92B855A0700BA1848 /* CustomMarkerView.xib in Resources */,
 				235DC8C22B6DC1DB00D5AF4F /* Assets.xcassets in Resources */,
+				230BBD8C2BC30F9700091195 /* UsernameCell.xib in Resources */,
 				235DC8C02B6DC1DA00D5AF4F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,12 +223,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				230BBD8B2BC30F9700091195 /* UsernameCell.swift in Sources */,
 				235CEC5F2B6F22F300F8353E /* TrendsViewController.swift in Sources */,
 				23111BE92B854B2E00BA1848 /* ChartPresets.swift in Sources */,
 				235DC8BD2B6DC1DA00D5AF4F /* MeasureViewController.swift in Sources */,
 				23111BF82B855A0700BA1848 /* CustomMarkerView.swift in Sources */,
 				2384547F2B785ACA00F86F49 /* UserData.swift in Sources */,
 				235DC8B92B6DC1DA00D5AF4F /* AppDelegate.swift in Sources */,
+				23AFE2142BB3AA560022AE2C /* SettingsViewController.swift in Sources */,
 				235CEC642B6F246C00F8353E /* K.swift in Sources */,
 				23111BFB2B857E1100BA1848 /* CreateChart.swift in Sources */,
 				235DC8BB2B6DC1DA00D5AF4F /* SceneDelegate.swift in Sources */,
@@ -382,12 +387,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QKW253Q5AX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "FFMI Calculator/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -411,12 +418,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QKW253Q5AX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "FFMI Calculator/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -465,12 +474,12 @@
 				minimumVersion = 4.0.0;
 			};
 		};
-		232D58E62B7ADB1300E690B0 /* XCRemoteSwiftPackageReference "Charts" */ = {
+		2335C9662BB3CB0600AB3C76 /* XCRemoteSwiftPackageReference "Charts" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			repositoryURL = "https://github.com/ChartsOrg/Charts.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
+				minimumVersion = 5.1.0;
 			};
 		};
 		235415D82B75C6B8006330B0 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
@@ -479,14 +488,6 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 7.0.1;
-			};
-		};
-		237DE6B52B8024CB0054B64A /* XCRemoteSwiftPackageReference "TinyConstraints" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/roberthein/TinyConstraints.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.2;
 			};
 		};
 		238454792B7859EC00F86F49 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
@@ -505,25 +506,15 @@
 			package = 2300BBC72B7E94EB00C3148A /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */;
 			productName = SkyFloatingLabelTextField;
 		};
-		232D58E72B7ADB1300E690B0 /* DGCharts */ = {
+		2335C9672BB3CB0600AB3C76 /* DGCharts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 232D58E62B7ADB1300E690B0 /* XCRemoteSwiftPackageReference "Charts" */;
+			package = 2335C9662BB3CB0600AB3C76 /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = DGCharts;
-		};
-		232D58E92B7ADB1300E690B0 /* DGChartsDynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 232D58E62B7ADB1300E690B0 /* XCRemoteSwiftPackageReference "Charts" */;
-			productName = DGChartsDynamic;
 		};
 		235415D92B75C6B8006330B0 /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 235415D82B75C6B8006330B0 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
-		};
-		237DE6B62B8024CB0054B64A /* TinyConstraints */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 237DE6B52B8024CB0054B64A /* XCRemoteSwiftPackageReference "TinyConstraints" */;
-			productName = TinyConstraints;
 		};
 		2384547A2B7859EC00F86F49 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;

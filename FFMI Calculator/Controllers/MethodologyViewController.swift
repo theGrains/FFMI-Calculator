@@ -17,6 +17,7 @@ class MethodologyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .light
         
         let VCButtonArray: [UIButton] = [measureButton, trendsButton, settingsButton]
         K.ChangeBorder.borderVCButtons(VCButtonArray)

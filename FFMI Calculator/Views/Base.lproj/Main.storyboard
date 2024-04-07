@@ -389,41 +389,12 @@
                         <outlet property="weightField" destination="rkJ-Fx-UXL" id="p6s-im-7RT"/>
                         <segue destination="IZ5-bO-D16" kind="presentation" identifier="measureToTrends" modalPresentationStyle="fullScreen" id="HJ7-4p-DC2"/>
                         <segue destination="NZy-Od-6hX" kind="presentation" identifier="measureToMethodology" modalPresentationStyle="fullScreen" id="4Nm-RK-qRJ"/>
-                        <segue destination="IKG-Xe-fhi" kind="presentation" identifier="measureToSettings" id="oeL-j4-wjP"/>
+                        <segue destination="IKG-Xe-fhi" kind="presentation" identifier="measureToSettings" modalPresentationStyle="fullScreen" id="oeL-j4-wjP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-251" y="-35"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="A4H-Dw-cou">
-            <objects>
-                <tableViewController id="JAI-d0-nVS" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="wg5-VC-NdT">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="qKL-rK-yBC">
-                                <rect key="frame" x="0.0" y="50" width="430" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qKL-rK-yBC" id="GR8-yj-uT9">
-                                    <rect key="frame" x="0.0" y="0.0" width="430" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="JAI-d0-nVS" id="eqA-0T-9NT"/>
-                            <outlet property="delegate" destination="JAI-d0-nVS" id="Rjg-ac-dic"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="h8J-G0-9iT"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="V5r-go-c4m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1783.2558139534883" y="652.78969957081551"/>
         </scene>
         <!--Trends View Controller-->
         <scene sceneID="x7b-5n-KKe">
@@ -608,20 +579,12 @@
                         <outlet property="weightPlotButton" destination="fNw-21-J4g" id="Kuc-Rv-jvQ"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="trendsToMeasure" modalPresentationStyle="fullScreen" id="zJh-Jh-Aqq"/>
                         <segue destination="NZy-Od-6hX" kind="presentation" identifier="trendsToMethodology" modalPresentationStyle="fullScreen" id="qDi-Gk-UIh"/>
-                        <segue destination="jpn-AV-rIB" kind="presentation" identifier="selfSegue" modalPresentationStyle="fullScreen" id="Ytg-hu-j6O"/>
+                        <segue destination="IKG-Xe-fhi" kind="presentation" identifier="trendsToSettings" modalPresentationStyle="fullScreen" id="yle-NC-W3z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f8S-Bv-6SJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="905.58139534883719" y="-706.22317596566529"/>
-        </scene>
-        <!--TrendsViewController-->
-        <scene sceneID="Eyv-kX-UQE">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="TrendsViewController" storyboardName="Main" referencedIdentifier="TrendsViewController" id="jpn-AV-rIB" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="89I-rK-Npm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1526" y="-595"/>
         </scene>
         <!--Methodology View Controller-->
         <scene sceneID="Duc-8w-mwg">
@@ -641,61 +604,61 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FFMI stands for &quot;Fat-Free Mass Index.&quot; It is a method to calculate the amount of muscle mass a person has per unit of height." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Mk-Pp-wjw">
-                                        <rect key="frame" x="3" y="52" width="424.33333333333331" height="33.666666666666657"/>
+                                        <rect key="frame" x="3" y="45.333333333333343" width="424.33333333333331" height="33.666666666666657"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interpretation of FFMI" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knr-dV-Iyf">
-                                        <rect key="frame" x="126.33333333333333" y="117.33333333333333" width="177.33333333333337" height="20.333333333333329"/>
+                                        <rect key="frame" x="126.33333333333333" y="104.33333333333333" width="177.33333333333337" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ffmiInterpMen" translatesAutoresizingMaskIntoConstraints="NO" id="sr9-az-EcJ">
-                                        <rect key="frame" x="79" y="169.33333333333334" width="272" height="122.66666666666666"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menFFMI" translatesAutoresizingMaskIntoConstraints="NO" id="sr9-az-EcJ">
+                                        <rect key="frame" x="87.333333333333329" y="149.66666666666663" width="255.33333333333337" height="161.33333333333337"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ffmiInterpWomen2" translatesAutoresizingMaskIntoConstraints="NO" id="ysV-cg-oR2">
-                                        <rect key="frame" x="79.666666666666686" y="323.66666666666669" width="271" height="121.33333333333331"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="womenFFMI" translatesAutoresizingMaskIntoConstraints="NO" id="ysV-cg-oR2">
+                                        <rect key="frame" x="87.666666666666671" y="336" width="254.66666666666663" height="161.33333333333337"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FFMI Formula" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDe-k2-cxS">
-                                        <rect key="frame" x="160" y="476.66666666666669" width="110.33333333333331" height="20.333333333333314"/>
+                                        <rect key="frame" x="160" y="522.66666666666663" width="110.33333333333331" height="20.333333333333371"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FFMI = (Lean Weight / 2.2) / ((height) * 0.0254)*2" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TJj-s2-W5c">
-                                        <rect key="frame" x="56.333333333333343" y="528.66666666666663" width="317.66666666666663" height="17"/>
+                                        <rect key="frame" x="56.333333333333343" y="568" width="317.66666666666663" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adjusted FFMI = FFMI + ( 6.3 * (1.8 - (height) * 0.0254))" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9g-hr-2tq">
-                                        <rect key="frame" x="35.666666666666657" y="577.33333333333337" width="358.66666666666674" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adjusted FFMI = FFMI + (6.3 * (1.8 - (height) * 0.0254))" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9g-hr-2tq">
+                                        <rect key="frame" x="37.666666666666657" y="610" width="354.66666666666674" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body Fat Formula" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zm1-9G-Lse">
-                                        <rect key="frame" x="144" y="626" width="142" height="20.333333333333371"/>
+                                        <rect key="frame" x="144" y="652.33333333333337" width="142" height="20.333333333333371"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The method used to calculate fat percentage is the US Navy body fat calculation method." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHf-Tf-vkm">
-                                        <rect key="frame" x="1" y="678" width="428" height="33.666666666666629"/>
+                                        <rect key="frame" x="1" y="697.66666666666663" width="428" height="33.666666666666629"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Males: Fat % = 86.01 * log10(waist - neck) - 70.041 * log10(height) + 36.76" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJ3-ia-hhX">
-                                        <rect key="frame" x="0.0" y="743.33333333333337" width="430" height="33.666666666666629"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Males: Fat % = 86.01*log10(waist - neck) - 70.041*log10(height) + 36.76" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJ3-ia-hhX">
+                                        <rect key="frame" x="6.3333333333333428" y="756.33333333333337" width="417.66666666666663" height="33.666666666666629"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Females: Fat % = 163.205 * log10(waist + hip - neck) - 97.648 * log10(height) - 78.387" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJM-Sj-WfA">
-                                        <rect key="frame" x="8.3333333333333428" y="808.66666666666663" width="413.33333333333326" height="33.666666666666629"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Females: Fat % = 163.205*log10(waist + hip - neck) - 97.648*log10(height) - 78.387" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJM-Sj-WfA">
+                                        <rect key="frame" x="41.666666666666657" y="815.33333333333337" width="347" height="33.666666666666629"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -773,6 +736,7 @@
                         <outlet property="trendsButton" destination="97s-df-6jb" id="JpN-Ed-PLx"/>
                         <segue destination="IZ5-bO-D16" kind="presentation" identifier="methodologyToTrends" modalPresentationStyle="fullScreen" id="n1m-HA-A9w"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="methodologyToMeasure" modalPresentationStyle="fullScreen" id="F5X-Pt-wmP"/>
+                        <segue destination="IKG-Xe-fhi" kind="presentation" identifier="methodologyToSettings" modalPresentationStyle="fullScreen" id="PsK-gV-muQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a9g-jR-o2g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -785,17 +749,119 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IKG-Xe-fhi" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pae-aC-j4r">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="JAI-d0-nVS" kind="relationship" relationship="rootViewController" id="dBR-hH-bCx"/>
+                        <segue destination="hxt-BJ-nEm" kind="relationship" relationship="rootViewController" id="dxW-iP-tdU"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OVC-37-TWA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="884.65116279069764" y="652.78969957081551"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="D0M-R3-Ey4">
+            <objects>
+                <viewController id="hxt-BJ-nEm" customClass="SettingsViewController" customModule="FFMI_Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fKU-EV-eay">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="172" translatesAutoresizingMaskIntoConstraints="NO" id="Yj5-at-wtW" userLabel="AllStack">
+                                <rect key="frame" x="0.0" y="44" width="430" height="888"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="a58-Tq-keo">
+                                        <rect key="frame" x="0.0" y="0.0" width="430" height="658"/>
+                                        <color key="backgroundColor" name="regularGreen"/>
+                                    </tableView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="89F-xN-mNv" userLabel="VCStack">
+                                        <rect key="frame" x="0.0" y="830" width="430" height="58"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgQ-Iw-zvz">
+                                                <rect key="frame" x="0.0" y="0.0" width="107.66666666666667" height="58"/>
+                                                <color key="backgroundColor" name="seaGreen"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Measure"/>
+                                                <connections>
+                                                    <action selector="VCbuttonPressed:" destination="hxt-BJ-nEm" eventType="touchUpInside" id="3wP-sD-wCX"/>
+                                                    <action selector="changeVCButtonPressed:" destination="IZ5-bO-D16" eventType="touchUpInside" id="p9O-DO-XTn"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qgg-33-hpy">
+                                                <rect key="frame" x="107.66666666666669" y="0.0" width="107.33333333333331" height="58"/>
+                                                <color key="backgroundColor" name="seaGreen"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Trends"/>
+                                                <connections>
+                                                    <action selector="VCbuttonPressed:" destination="hxt-BJ-nEm" eventType="touchUpInside" id="Fwm-gT-yXA"/>
+                                                    <action selector="trendsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yO1-5O-HYn"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ktm-wx-a79">
+                                                <rect key="frame" x="214.99999999999997" y="0.0" width="107.66666666666666" height="58"/>
+                                                <color key="backgroundColor" name="seaGreen"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Methodology"/>
+                                                <connections>
+                                                    <action selector="VCbuttonPressed:" destination="hxt-BJ-nEm" eventType="touchUpInside" id="aB1-pA-AyG"/>
+                                                    <action selector="changeVCButtonPressed:" destination="IZ5-bO-D16" eventType="touchUpInside" id="kAP-19-eRT"/>
+                                                    <action selector="methodologyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gmT-Zg-Z8Z"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksX-0e-Q8P">
+                                                <rect key="frame" x="322.66666666666669" y="0.0" width="107.33333333333331" height="58"/>
+                                                <color key="backgroundColor" name="darkGreen"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Settings"/>
+                                                <connections>
+                                                    <action selector="changeVCButtonPressed:" destination="IZ5-bO-D16" eventType="touchUpInside" id="LcK-KP-nAJ"/>
+                                                    <action selector="settingsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JrU-bB-szY"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="58" id="P8T-5N-amS"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="regularGreen"/>
+                                <constraints>
+                                    <constraint firstItem="a58-Tq-keo" firstAttribute="leading" secondItem="Yj5-at-wtW" secondAttribute="leading" id="6DU-Bz-8PW"/>
+                                    <constraint firstItem="89F-xN-mNv" firstAttribute="leading" secondItem="Yj5-at-wtW" secondAttribute="leading" id="J1n-HK-yDP"/>
+                                    <constraint firstAttribute="trailing" secondItem="a58-Tq-keo" secondAttribute="trailing" id="bV9-9N-2Wl"/>
+                                    <constraint firstAttribute="trailing" secondItem="89F-xN-mNv" secondAttribute="trailing" id="joX-SP-vQ9"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nuV-kc-cUO"/>
+                        <color key="backgroundColor" name="regularGreen"/>
+                        <constraints>
+                            <constraint firstItem="nuV-kc-cUO" firstAttribute="trailing" secondItem="Yj5-at-wtW" secondAttribute="trailing" id="Pt5-wB-a95"/>
+                            <constraint firstItem="nuV-kc-cUO" firstAttribute="bottom" secondItem="Yj5-at-wtW" secondAttribute="bottom" id="dA2-7h-GAv"/>
+                            <constraint firstItem="Yj5-at-wtW" firstAttribute="top" secondItem="nuV-kc-cUO" secondAttribute="top" id="jSi-Xx-h7P"/>
+                            <constraint firstItem="Yj5-at-wtW" firstAttribute="leading" secondItem="fKU-EV-eay" secondAttribute="leading" id="qaq-xH-QYp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="A4A-xi-3Th"/>
+                    <connections>
+                        <outlet property="measureButton" destination="pgQ-Iw-zvz" id="gv6-7Z-cFt"/>
+                        <outlet property="methodologyButton" destination="Ktm-wx-a79" id="c6P-fO-suw"/>
+                        <outlet property="tableView" destination="a58-Tq-keo" id="lQb-gJ-Vlq"/>
+                        <outlet property="trendsButton" destination="Qgg-33-hpy" id="GY9-xq-7cr"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="settingsToMeasure" modalPresentationStyle="fullScreen" id="5GO-Ud-lML"/>
+                        <segue destination="NZy-Od-6hX" kind="presentation" identifier="settingsToMethodology" modalPresentationStyle="fullScreen" id="JSp-dB-rvl"/>
+                        <segue destination="IZ5-bO-D16" kind="presentation" identifier="settingsToTrends" modalPresentationStyle="fullScreen" id="Zet-Ic-WLq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BZw-QI-e0d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1712" y="653"/>
         </scene>
     </scenes>
     <designables>
@@ -822,13 +888,14 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="qDi-Gk-UIh"/>
-        <segue reference="HJ7-4p-DC2"/>
-        <segue reference="zJh-Jh-Aqq"/>
+        <segue reference="oeL-j4-wjP"/>
+        <segue reference="JSp-dB-rvl"/>
+        <segue reference="Zet-Ic-WLq"/>
+        <segue reference="5GO-Ud-lML"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="ffmiInterpMen" width="272" height="122.5"/>
-        <image name="ffmiInterpWomen2" width="271" height="121.5"/>
+        <image name="menFFMI" width="255.33332824707031" height="161.33332824707031"/>
+        <image name="womenFFMI" width="254.66667175292969" height="161.33332824707031"/>
         <namedColor name="darkBlue">
             <color red="0.043999999761581421" green="0.14800000190734863" blue="0.20900000631809235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

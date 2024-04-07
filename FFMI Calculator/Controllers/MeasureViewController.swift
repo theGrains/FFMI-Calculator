@@ -60,6 +60,7 @@ class MeasureViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .light
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -222,12 +223,15 @@ class MeasureViewController: UIViewController {
         
         animateButton(sender)
         
-        let realData: Bool
+        var realData: Bool = false
         
-        if currentFat! >= 0 && currentFat! <= 40 && currentFFMI! >= 0 {
-            realData = true
-        } else {
-            realData = false
+        if let currentFatOptional = currentFat {
+            
+            if currentFatOptional >= 0 && currentFatOptional <= 40 && currentFFMI! >= 0 {
+                realData = true
+            } else {
+                realData = false
+            }
         }
         
         if enteredData == true && realData == true {

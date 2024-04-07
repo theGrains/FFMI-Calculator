@@ -50,6 +50,7 @@ struct ChartPresets {
         lineChartView.xAxis.labelPosition = .bottom
         lineChartView.xAxis.labelFont = .boldSystemFont(ofSize: 12)
         lineChartView.xAxis.axisLineColor = .darkGreen
+        lineChartView.rightAxis.gridColor = .darkGreen
         lineChartView.xAxis.axisMaxLabels = 8
         lineChartView.xAxis.axisMinimum = 0
         lineChartView.extraRightOffset = 30
@@ -65,7 +66,7 @@ struct ChartPresets {
         set.valueFont = UIFont(name: "Verdana", size: 10)!
         set.setCircleColor(UIColor.seaGreen)
         set.circleHoleColor = UIColor.white
-        set.valueTextColor = UIColor.seaGreen
+        set.valueTextColor = .white
         set.mode = .cubicBezier
         set.lineWidth = 3
         set.setColor(UIColor.seaGreen)

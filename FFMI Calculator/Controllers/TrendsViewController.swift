@@ -37,7 +37,7 @@ class TrendsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        overrideUserInterfaceStyle = .light
         lineChartView.delegate = self
         axisFormatDelegate = self
         lineChartView.xAxis.valueFormatter = axisFormatDelegate
@@ -72,7 +72,7 @@ class TrendsViewController: UIViewController {
         
         if deleteButton.alpha == 1 {
             deleteButton.alpha = 0.5
-            lineChartView.highlightValue(nil)
+            lineChartView.highlightValue(nil, callDelegate: false)
             lineChartView.moveViewToX(0.0)
             if userData!.count > 1 {
                 do {
@@ -89,7 +89,7 @@ class TrendsViewController: UIViewController {
                         realm.delete(userData![0])
                     }
                 } catch {
-                    print("There was an error trying to delte")
+                    print("There was an error trying to delete")
                 }
             }
         }
@@ -146,7 +146,7 @@ extension TrendsViewController: ChartViewDelegate, AxisValueFormatter {
         } else {
             weightUnit = "kg"
             circumUnit = "cm"
-            customMarkerView.weightLabel.text = "Weight = \(String(format: "%.2f", userData![Int(entry.x)].weight)) \(weightUnit)"
+            customMarkerView.weightLabel.text = "Mass = \(String(format: "%.2f", userData![Int(entry.x)].weight)) \(weightUnit)"
         }
         
         
