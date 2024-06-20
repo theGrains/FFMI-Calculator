@@ -76,8 +76,8 @@ class MeasureViewController: UIViewController {
         maleButton.backgroundColor = UIColor.darkGreen
         femaleButton.backgroundColor = UIColor.seaGreen
         
-        let VCButtonArray: [UIButton] = [maleButton, femaleButton, knowFatButton, dontKnowFatButton, imperialButton, metricButton, measureButton, trendsButton, methodologyButton, settingsButton]
-        K.ChangeBorder.borderVCButtons(VCButtonArray)
+//        let VCButtonArray: [UIButton] = [maleButton, femaleButton, knowFatButton, dontKnowFatButton, imperialButton, metricButton, measureButton, trendsButton, methodologyButton, settingsButton]
+//        K.ChangeBorder.borderVCButtons(VCButtonArray)
         
         let optionButtonArray: [UIButton] = [calculateButton, resetButton, saveButton]
         K.ChangeBorder.borderOptionButtons(optionButtonArray)
@@ -118,9 +118,9 @@ class MeasureViewController: UIViewController {
     // SceneDelegate -> window coming into foreground, etc
     // sceneDidEnterBackground -> good time to save user's data
     
-    @IBAction func changeVCButtonPressed(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "measureTo\(sender.currentTitle!)", sender: self)
-    }
+//    @IBAction func changeVCButtonPressed(_ sender: UIButton) {
+//        self.performSegue(withIdentifier: "measureTo\(sender.currentTitle!)", sender: self)
+//    }
     
     @IBAction func knownFatPressed(_ sender: UIButton) {
         

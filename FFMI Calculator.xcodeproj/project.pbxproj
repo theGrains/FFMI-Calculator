@@ -28,6 +28,7 @@
 		2384547B2B7859EC00F86F49 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 2384547A2B7859EC00F86F49 /* Realm */; };
 		2384547D2B7859EC00F86F49 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2384547C2B7859EC00F86F49 /* RealmSwift */; };
 		2384547F2B785ACA00F86F49 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2384547E2B785ACA00F86F49 /* UserData.swift */; };
+		239DF4422C24AAA3003DD218 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239DF4412C24AAA3003DD218 /* TabBarController.swift */; };
 		23AFE2142BB3AA560022AE2C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AFE2132BB3AA560022AE2C /* SettingsViewController.swift */; };
 		23EBCA512B716E8F00E74F8E /* CalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EBCA502B716E8F00E74F8E /* CalculatorModel.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 		235DC8C42B6DC1DB00D5AF4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		235DC8C62B6DC1DB00D5AF4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2384547E2B785ACA00F86F49 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		239DF4412C24AAA3003DD218 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		23AFE2132BB3AA560022AE2C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		23EBCA502B716E8F00E74F8E /* CalculatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +124,7 @@
 				235CEC5E2B6F22F300F8353E /* TrendsViewController.swift */,
 				235CEC602B6F233800F8353E /* MethodologyViewController.swift */,
 				23AFE2132BB3AA560022AE2C /* SettingsViewController.swift */,
+				239DF4412C24AAA3003DD218 /* TabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				235CEC642B6F246C00F8353E /* K.swift in Sources */,
 				23111BFB2B857E1100BA1848 /* CreateChart.swift in Sources */,
 				235DC8BB2B6DC1DA00D5AF4F /* SceneDelegate.swift in Sources */,
+				239DF4422C24AAA3003DD218 /* TabBarController.swift in Sources */,
 				235CEC612B6F233800F8353E /* MethodologyViewController.swift in Sources */,
 				23EBCA512B716E8F00E74F8E /* CalculatorModel.swift in Sources */,
 			);
@@ -397,7 +401,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -428,7 +432,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

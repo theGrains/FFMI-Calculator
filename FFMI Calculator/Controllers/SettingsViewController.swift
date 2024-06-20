@@ -24,13 +24,13 @@ class SettingsViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        let VCButtonArray: [UIButton] = [measureButton, trendsButton, methodologyButton]
-        K.ChangeBorder.borderVCButtons(VCButtonArray)
+//        let VCButtonArray: [UIButton] = [measureButton, trendsButton, methodologyButton]
+//        K.ChangeBorder.borderVCButtons(VCButtonArray)
     }
     
-    @IBAction func VCbuttonPressed(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "settingsTo\(sender.currentTitle!)", sender: self)
-    }
+//    @IBAction func VCbuttonPressed(_ sender: UIButton) {
+//        self.performSegue(withIdentifier: "settingsTo\(sender.currentTitle!)", sender: self)
+//    }
 }
 
 extension SettingsViewController: UITableViewDataSource {

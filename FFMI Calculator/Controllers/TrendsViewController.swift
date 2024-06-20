@@ -50,8 +50,8 @@ class TrendsViewController: UIViewController {
         ChartPresets.lineChartPreset(userData!, lineChartView, dataToPlot)
         CreateChart.setData(userData!, lineChartView, dataToPlot)
         
-        let VCButtonArray: [UIButton] = [measureButton, methodologyButton, settingsButton]
-        K.ChangeBorder.borderVCButtons(VCButtonArray)
+//        let VCButtonArray: [UIButton] = [measureButton, methodologyButton, settingsButton]
+//        K.ChangeBorder.borderVCButtons(VCButtonArray)
         
         let plotButtonArray: [UIButton] = [ffmiPlotButton, affmiPlotButton, fatPlotButton, weightPlotButton]
         K.ChangeBorder.borderVCButtons(plotButtonArray)
@@ -63,9 +63,9 @@ class TrendsViewController: UIViewController {
     }
     
     
-    @IBAction func changeVCButtonPressed(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "trendsTo\(sender.currentTitle!)", sender: self)
-    }
+//    @IBAction func changeVCButtonPressed(_ sender: UIButton) {
+//        self.performSegue(withIdentifier: "trendsTo\(sender.currentTitle!)", sender: self)
+//    }
     
     
     @IBAction func deleteButtonPressed(_ sender: UIButton) {

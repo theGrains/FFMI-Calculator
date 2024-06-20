@@ -19,11 +19,11 @@ class MethodologyViewController: UIViewController {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .light
         
-        let VCButtonArray: [UIButton] = [measureButton, trendsButton, settingsButton]
-        K.ChangeBorder.borderVCButtons(VCButtonArray)
+//        let VCButtonArray: [UIButton] = [measureButton, trendsButton, settingsButton]
+//        K.ChangeBorder.borderVCButtons(VCButtonArray)
     }
 
-    @IBAction func changeVCButtonPressed(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "methodologyTo\(sender.currentTitle!)", sender: self)
-    }
+//    @IBAction func changeVCButtonPressed(_ sender: UIButton) {
+//        self.performSegue(withIdentifier: "methodologyTo\(sender.currentTitle!)", sender: self)
+//    }
 }
